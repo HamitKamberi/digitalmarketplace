@@ -62,6 +62,8 @@ gem "view_component", "~> 3.23.2"
 gem "whenever", "~> 1.0.0", require: false
 gem "wicked_pdf", "~> 2.8.2"
 gem "wkhtmltopdf-binary", "~> 0.12.6"
+gem 'mailjet'
+
 
 group :development, :test do
   gem "debug", "~> 1.9.2"

@@ -105,11 +105,11 @@ Rails.application.configure do
   config.active_record.dump_schema_after_migration = false
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.smtp_settings = {
-    address:              'email-smtp.eu-central-1.amazonaws.com',
-    port:                 587,
-    user_name:            'AKIATX3PH7HQUSEU4AK7',
-    password:             'BOUaQnTfqwVsxyJyUOM2ejVSeIYIOfhkra6U5pO6gL8c',
-    authentication:       :login,
+    address: 'in-v3.mailjet.com',
+    port: 587,
+    user_name: '723c14f72a847e1cf6af3ec57902f1a5',
+    password: 'beb48069e760a0b993355d4c5af9446b',
+    authentication: 'plain',
     enable_starttls_auto: true
   }
 

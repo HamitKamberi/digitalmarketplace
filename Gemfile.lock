@@ -358,6 +358,11 @@ GEM
       net-imap
       net-pop
       net-smtp
+    mailjet (1.8.1)
+      activesupport (>= 5.0.0)
+      faraday (~> 2.1)
+      rack (>= 1.4.0)
+      yajl-ruby
     marcel (1.0.4)
     matrix (0.4.2)
     mdl (0.13.0)
@@ -732,6 +737,7 @@ GEM
     wkhtmltopdf-binary (0.12.6.9)
     xpath (3.2.0)
       nokogiri (~> 1.8)
+    yajl-ruby (1.4.3)
     zeitwerk (2.7.3)
 
 PLATFORMS
@@ -786,6 +792,7 @@ DEPENDENCIES
   knapsack_pro (~> 7.8.0)
   launchy (~> 3.1.1)
   letter_opener_web (~> 3.0.0)
+  mailjet
   mdl (~> 0.13.0)
   mini_magick (~> 4.13.2)
   omniauth (~> 2.1.3)
