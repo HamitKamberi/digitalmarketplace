@@ -4,11 +4,5 @@
 
     <%= content %>
 
-    <% if image_path %>
-      <figure>
-        <%= image_tag image_path, alt: t("pages.help.#{section}.image_alt") %>
-        <figcaption><%= t("pages.help.#{section}.figcaption") %></figcaption>
-      </figure>
-    <% end %>
   </div>
 </div>

@@ -1,0 +1,6 @@
+<%= render Pages::Help::SectionComponent.new("associated_partners") do %>
+  <p>
+    <%= sanitize(t("pages.help.associated_partners.description",
+                   link: link_to(t("pages.help.associated_partners.link"), associated_partners_index_path))) %>
+  </p>
+<% end %>

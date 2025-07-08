@@ -1,0 +1,6 @@
+<%= render Pages::Help::SectionComponent.new("register") do %>
+  <p>
+    <%= sanitize(t("pages.help.register.description",
+                   link: link_to(t("pages.help.register.link"), new_user_registration_path))) %>
+  </p>
+<% end %>

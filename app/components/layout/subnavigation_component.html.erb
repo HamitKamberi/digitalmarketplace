@@ -18,6 +18,15 @@
                                 accesskey: "2" %>
       </li>
     <% end %>
+
+    <li>
+      <%= layout_menu_link_to t("layouts.header.associated_partners"),
+                            "/associated_partners/index",
+                            controller_name == "associated_partners",
+                            accesskey: "8" %>
+    </li>
+
+
     <% if feature?(:polls) %>
       <li>
         <%= layout_menu_link_to t("layouts.header.poll_questions"),

@@ -1,4 +1,4 @@
-resources :proposals do
+resources :proposals, path: "smart_specialization" do
   resource :dashboard, only: [:show], controller: "dashboard" do
     collection do
       patch :publish

@@ -74,8 +74,8 @@ en:
         one: Ballot sheet
         other: Ballot sheets
       proposal:
-        one: "Citizen proposal"
-        other: "Citizen proposals"
+        one: "Post"
+        other: "Posts"
       sdg/goal:
         one: "goal"
         other: "goals"
@@ -104,8 +104,8 @@ en:
         one: "Process"
         other: "Processes"
       legislation/proposal:
-        one: "Proposal"
-        other: "Proposals"
+        one: "Post"
+        other: "Posts"
       legislation/draft_versions:
         one: "Draft version"
         other: "Draft versions"
@@ -134,11 +134,11 @@ en:
         one: "Poll"
         other: "Polls"
       proposal_notification:
-        one: "Proposal notification"
-        other: "Proposal notifications"
+        one: "Notification"
+        other: "Notifications"
       dashboard/action:
-        one: Proposal dashboard action
-        other: Proposal dashboard actions
+        one: Dashboard action
+        other: Dashboard actions
       dashboard/administrator_task:
         one: Task
         other: Tasks
@@ -266,15 +266,15 @@ en:
         title: "Title"
         question: "Question"
         description: "Description"
-        responsible_name: "Full name of the person submitting the proposal"
-        retired_reason: "Reason to withdraw the proposal"
+        responsible_name: "Full name of the person creating this post"
+        retired_reason: "Reason to withdraw the post"
         selected: "Mark as selected"
         terms_of_service: "Terms of service"
         video_url: "External video URL"
       proposal/translation:
-        title: "Proposal title"
-        description: "Proposal text"
-        summary: "Proposal summary"
+        title: "Title"
+        description: "Description"
+        summary: "Summary"
         retired_explanation: "Explanation"
       user:
         login: "Email or username"

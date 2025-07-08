@@ -22,11 +22,11 @@
       <% if feature?(:debates) %>
         <%= render "pages/help/debates" %>
       <% end %>
-
+      <%= render "pages/help/register" %>
       <% if feature?(:proposals) %>
         <%= render "pages/help/proposals" %>
       <% end %>
-
+        <%= render "pages/help/associated_partners" %>
       <% if feature?(:budgets) %>
         <%= render "pages/help/budgets" %>
       <% end %>
@@ -44,10 +44,5 @@
     </div>
   </div>
 
-  <div class="row">
-    <hr>
-    <div class="small-12 column">
-      <%= render "pages/help/other" %>
-    </div>
-  </div>
+
 </div>

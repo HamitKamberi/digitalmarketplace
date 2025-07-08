@@ -10,10 +10,24 @@
       ),
       (
         [
+          t("pages.help.menu.register"),
+          "#register",
+          class: "button hollow expanded"
+        ]
+      ),
+      (
+        [
           t("pages.help.menu.proposals"),
           "#proposals",
           class: "button hollow expanded"
         ] if feature?(:proposals)
+      ),
+      (
+        [
+          t("pages.help.menu.associated_partners"),
+          "#associated_partners",
+          class: "button hollow expanded"
+        ]
       ),
       (
         [
@@ -36,11 +50,8 @@
           class: "button hollow expanded"
         ] if feature?(:legislation)
       ),
-      [
-        t("pages.help.menu.other"),
-        "#other",
-        class: "button hollow expanded"
-      ],
+
+
       class: "menu-pages", "data-magellan": true
     ) %>
   </div>

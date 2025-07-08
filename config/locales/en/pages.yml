@@ -8,11 +8,17 @@ en:
       subtitle: LEGAL NOTICE ON THE CONDITIONS OF USE, PRIVACY AND PROTECTION OF PERSONAL DATA OF THE OPEN GOVERNMENT PORTAL
       description: Information page on the conditions of use, privacy and protection of personal data.
     help:
-      title: "%{org} is a platform for citizen participation"
+      title: "%{org} is a platform for participation"
       guide: "This guide explains what each of the %{org} sections are for and how they work."
+      associated_partners:
+        title: "Associated Partners"
+        description: "You can view the list of associated partners, including their names and contact information."
+      register:
+        title: "Register an Account"
+        description: "Before you can participate, you’ll need to create an account by filling out the registration form. After registering, please confirm your email address. Once these steps are complete, you'll be able to collaborate and take part in other activities."
       menu:
         debates: "Debates"
-        proposals: "Proposals"
+        proposals: "Smart Specializations"
         budgets: "Participatory budgets"
         polls: "Polls"
         other: "Other information of interest"
@@ -26,11 +32,11 @@ en:
         image_alt: "Buttons to rate the debates"
         figcaption: '"I agree" and "I disagree" buttons to rate the debates.'
       proposals:
-        title: "Proposals"
-        description: "In the %{link} section you can make proposals for the City Council to carry them out. The proposals require support, and if they reach sufficient support, they are put to a public vote. The proposals approved in these citizens' votes are accepted by the City Council and carried out."
-        link: "citizen proposals"
-        image_alt: "Button to support a proposal"
-        figcaption: 'Button to "Support" a proposal.'
+        title: "Smart Specializations"
+        description: "In the %{link} section, you can create topics for various needs. These topics can also act as invitations to discussions on specific subjects. Once you have a meeting link, you can include it in the description of your post. There's also a comments section where other users can engage, communicate, and share ideas."
+        link: "smart Specializations"
+        image_alt: "Button to support a topics"
+        figcaption: 'Button to "Support" a topics.'
       budgets:
         title: "Participatory Budgeting"
         description: "The %{link} section helps people make a direct decision on what part of the municipal budget is spent on."
@@ -96,7 +102,7 @@ en:
             - key_column: 1
               page_column: Debates
             - key_column: 2
-              page_column: Proposals
+              page_column: Smart Specializations
             - key_column: 3
               page_column: Votes
             - key_column: 4

@@ -34,7 +34,7 @@ en:
         sections:
           homepage: Homepage
           debates: Debates
-          proposals: Proposals
+          proposals: Smart Specializations
           budgets: Participatory budgeting
           help_page: Help page
           sdg: SDG
@@ -64,7 +64,7 @@ en:
           all: All
           on_comments: Comments
           on_debates: Debates
-          on_proposals: Proposals
+          on_proposals: Smart Specializations
           on_users: Users
           on_system_emails: System emails
         title: Moderator activity
@@ -623,7 +623,7 @@ en:
           homepage: Homepage
           draft_versions: Drafting
           questions: Debate
-          proposals: Proposals
+          proposals: Smart Specializations
           milestones: Following
       homepage:
         edit:
@@ -735,7 +735,7 @@ en:
       activity: Moderator activity
       admin: Admin menu
       banner: Banners
-      proposals: Proposals
+      proposals: Smart Specializations
       proposals_topics: Proposals topics
       budgets: Participatory budgets
       geozones: Geozones
