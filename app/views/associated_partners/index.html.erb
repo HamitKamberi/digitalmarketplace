@@ -9,8 +9,12 @@
       </div>
       <div class="details">
         <div class="name"><strong><%= user.name.presence || "No Name" %></strong></div>
-        <div class="username"><%= user.username.presence || "N/A" %></div>
+        <div class="username"><%= user.username.presence || "" %></div>
         <div class="email"><%= user.email %></div>
+        <% if user.official_position?%>
+          <div class="official-position">Type : <strong><%= user.official_position.presence %></strong></div>
+        <% end %>
+
       </div>
     </div>
   <% end %>
@@ -66,5 +70,11 @@
     .details .email {
     font-size: 0.9rem;
     color: #666;
+    }
+
+    .details .official-position {
+      font-size: 0.9rem;
+      color: #444;
+      margin-top: 2px;
     }
 </style>

@@ -7,7 +7,13 @@
   <%= render Shared::AvatarComponent.new(resource.author, size: 32, class: "author-photo") %>
   <span class="author">
     <%= link_to resource.author.name, user_path(resource.author) %>
+    <% if resource.author.official_position.present? %>
+      &middot;
+      <span class="official-level-badge"><%= resource.author.official_position %></span>
+    <% end %>
   </span>
+
+
 
   <% if resource.respond_to?(:association_name) && resource.association_name.present? %>
     <span>
@@ -29,3 +35,16 @@
     <%= t("shared.collective") %>
   </span>
 <% end %>
+
+<style>
+.official-level-badge {
+  background-color:rgb(153, 179, 204); /* Light blue */
+  color:rgb(0, 0, 0);            /* Darker blue for contrast */
+  padding: 1px 4px;
+  border-radius: 6px;
+  font-size: 0.85em;
+  margin-left: 4px;
+  display: inline-block;
+}
+
+</style>
