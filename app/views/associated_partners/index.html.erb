@@ -4,16 +4,17 @@
   <% @users.each do |user| %>
     <div class="partner-card">
       <div class="avatar">
-        <!-- Replace with real image if available -->
         <%= image_tag("avatar.png", alt: user.name, class: "avatar-img") %>
       </div>
       <div class="details">
         <div class="name"><strong><%= user.name.presence || "No Name" %></strong></div>
         <div class="username"><%= user.username.presence || "" %></div>
-        <div class="email"><%= user.email %></div>
-        <% if user.official_position?%>
-          <div class="official-position">Type : <strong><%= user.official_position.presence %></strong></div>
-        <% end %>
+        <% if user_signed_in? %>
+          <div class="email"><%= user.email %></div>
+          <% if user.official_position?%>
+            <div class="official-position">Role : <strong><%= user.official_position.presence %></strong></div>
+          <% end %>
+        <%end%>
 
       </div>
     </div>

@@ -3,13 +3,6 @@
     <%= link_list(
       (
         [
-          t("pages.help.menu.debates"),
-          "#debates",
-          class: "button hollow expanded"
-        ] if feature?(:debates)
-      ),
-      (
-        [
           t("pages.help.menu.register"),
           "#register",
           class: "button hollow expanded"
@@ -49,6 +42,13 @@
           "#processes",
           class: "button hollow expanded"
         ] if feature?(:legislation)
+      ),
+      (
+        [
+          t("pages.help.menu.debates"),
+          "#debates",
+          class: "button hollow expanded"
+        ] if feature?(:debates)
       ),
 
 

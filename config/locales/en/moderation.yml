@@ -31,9 +31,9 @@ en:
           pending_flag_review: Pending
           with_ignored_flag: Marked as viewed
         headers:
-          debate: Debate
+          debate: Intership
           moderate: Moderate
-        hide: Hide debates
+        hide: Hide interships
         ignore_flags: Mark as viewed
         orders:
           created_at: Newest
@@ -43,7 +43,7 @@ en:
       title: Moderation
     menu:
       flagged_comments: Comments
-      flagged_debates: Debates
+      flagged_debates: Interships
       flagged_investments: Budget investments
       proposals: Proposals
       proposal_notifications: Proposals notifications

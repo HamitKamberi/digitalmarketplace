@@ -17,20 +17,20 @@ en:
         title: "Register an Account"
         description: "Before you can participate, you’ll need to create an account by filling out the registration form. After registering, please confirm your email address. Once these steps are complete, you'll be able to collaborate and take part in other activities."
       menu:
-        debates: "Debates"
+        debates: "Interships"
         proposals: "Smart Specializations"
         budgets: "Participatory budgets"
         polls: "Polls"
         other: "Other information of interest"
         processes: "Processes"
       debates:
-        title: "Debates"
-        description: "In the %{link} section you can present and share your opinion with other people on issues of concern to you related to the city. It is also a place to generate ideas that through the other sections of %{org} lead to concrete actions by the City Council."
-        link: "citizen debates"
-        feature: "You can open debates, comment and evaluate them with the <strong>I agree</strong> or <strong>I don't agree</strong>. For that you have to %{link}."
+        title: "Interships"
+        description: "The Internship section will feature various internship programs specifically designed for students. Each listing will include comprehensive details such as eligibility criteria, duration, application deadlines, responsibilities, and how to apply."
+        link: "citizen interships"
+        feature: "You can open interships, comment and evaluate them with the <strong>I agree</strong> or <strong>I don't agree</strong>. For that you have to %{link}."
         feature_link: "register in %{org}"
-        image_alt: "Buttons to rate the debates"
-        figcaption: '"I agree" and "I disagree" buttons to rate the debates.'
+        image_alt: "Buttons to rate the interships"
+        figcaption: '"I agree" and "I disagree" buttons to rate the interships.'
       proposals:
         title: "Smart Specializations"
         description: "In the %{link} section, you can create topics for various needs. These topics can also act as invitations to discussions on specific subjects. Once you have a meeting link, you can include it in the description of your post. There's also a comments section where other users can engage, communicate, and share ideas."
@@ -100,7 +100,7 @@ en:
             - key_column: 0
               page_column: Home
             - key_column: 1
-              page_column: Debates
+              page_column: Interships
             - key_column: 2
               page_column: Smart Specializations
             - key_column: 3

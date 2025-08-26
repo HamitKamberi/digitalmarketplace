@@ -20,13 +20,13 @@
   <div class="row">
     <div class="small-12 medium-7 large-8 column">
       <% if feature?(:debates) %>
-        <%= render "pages/help/debates" %>
+        <%= render "pages/help/register" %>
       <% end %>
-      <%= render "pages/help/register" %>
+      <%= render "pages/help/associated_partners" %>
       <% if feature?(:proposals) %>
         <%= render "pages/help/proposals" %>
       <% end %>
-        <%= render "pages/help/associated_partners" %>
+        <%= render "pages/help/debates" %>
       <% if feature?(:budgets) %>
         <%= render "pages/help/budgets" %>
       <% end %>

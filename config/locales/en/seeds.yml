@@ -34,10 +34,10 @@ en:
         link_text: "More about Participatory budgets"
         label: "Participatory budgets"
       debate:
-        title: "How do debates work?"
+        title: "How do interships work?"
         description: "Anyone can open threads on any subject, creating separate spaces where people can discuss the proposed topic. Debates are valued by everybody, to highlight the most important issues."
-        link_text: "More about debates"
-        label: "Debates"
+        link_text: "More about interships"
+        label: "Interships"
       header:
         title: "CONSUL DEMOCRACY"
         description: "Free software for citizen participation."

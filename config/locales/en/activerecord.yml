@@ -32,8 +32,8 @@ en:
         one: "Comment"
         other: "Comments"
       debate:
-        one: "Debate"
-        other: "Debates"
+        one: "Intership"
+        other: "Interships"
       tag:
         one: "Tag"
         other: "Tags"
@@ -259,8 +259,8 @@ en:
         terms_of_service: "Terms of service"
         title: "Title"
       debate/translation:
-        title: "Debate title"
-        description: "Initial debate text"
+        title: "Intership title"
+        description: "Initial intership text"
       proposal:
         author: "Author"
         title: "Title"
@@ -294,7 +294,7 @@ en:
         phone_number: "Phone number"
         public_activity: "Keep my list of activities public"
         public_interests: "Keep the elements I follow public"
-        recommended_debates: "Recommend debates to me"
+        recommended_debates: "Recommend interships to me"
         recommended_proposals: "Recommend proposals to me"
       direct_message:
         title: "Title"
@@ -583,7 +583,7 @@ en:
             end_date:
               invalid_date_range: must be on or after the start date
             debate_end_date:
-              invalid_date_range: must be on or after the debate start date
+              invalid_date_range: must be on or after the intreship start date
             draft_end_date:
               invalid_date_range: must be on or after the draft start date
             allegations_end_date:
