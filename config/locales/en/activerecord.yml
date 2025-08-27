@@ -32,8 +32,8 @@ en:
         one: "Comment"
         other: "Comments"
       debate:
-        one: "Intership"
-        other: "Interships"
+        one: "Internship"
+        other: "Internships"
       tag:
         one: "Tag"
         other: "Tags"
@@ -259,8 +259,8 @@ en:
         terms_of_service: "Terms of service"
         title: "Title"
       debate/translation:
-        title: "Intership title"
-        description: "Initial intership text"
+        title: "Internship title"
+        description: "Initial internship text"
       proposal:
         author: "Author"
         title: "Title"
@@ -294,7 +294,7 @@ en:
         phone_number: "Phone number"
         public_activity: "Keep my list of activities public"
         public_interests: "Keep the elements I follow public"
-        recommended_debates: "Recommend interships to me"
+        recommended_debates: "Recommend internships to me"
         recommended_proposals: "Recommend proposals to me"
       direct_message:
         title: "Title"

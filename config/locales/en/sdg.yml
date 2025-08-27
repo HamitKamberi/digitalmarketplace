@@ -612,7 +612,7 @@ en:
             short_title: "Further Develop Measurements of Progress"
       help:
         title: "Sustainable Development Goals help"
-        description: "You can align your contributions to the community (interships, citizen proposals and investment projects) with the Sustaniable Development Goals 2030 Agenda, this will allow us to have an overview of our contribution to each of the Sustainable Development Goals. Below you can find out about all the goals, their targets and localized targets."
+        description: "You can align your contributions to the community (internships, citizen proposals and investment projects) with the Sustaniable Development Goals 2030 Agenda, this will allow us to have an overview of our contribution to each of the Sustainable Development Goals. Below you can find out about all the goals, their targets and localized targets."
       show:
         read_more: "Read more about %{goal}"
         read_less: "Read less about %{goal}"

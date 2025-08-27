@@ -61,7 +61,7 @@ en:
           help: Help with collaborative legislation
         section_footer:
           title: Help with collaborative legislation
-          description: Participate in the interships and processes prior to the approval of new regulations or strategies. Your opinion will be considered.
+          description: Participate in the internships and processes prior to the approval of new regulations or strategies. Your opinion will be considered.
       phase_not_open:
         not_open: This phase is not open yet
       phase_empty:
@@ -72,7 +72,7 @@ en:
       shared:
         key_dates: Participation phases
         homepage: Homepage
-        debate_dates: Intership
+        debate_dates: Internship
         draft_publication_date: Draft publication
         allegations_dates: Comments
         result_publication_date: Final result publication
@@ -86,7 +86,7 @@ en:
         form:
           leave_comment: Leave your answer
       question:
-        debate: Intership
+        debate: Internship
       show:
         answer_question: Submit answer
         next_question: Next question
@@ -95,10 +95,10 @@ en:
         title: Collaborative legislation process
       participation:
         phase_not_open: This phase is not open
-        organizations: Organisations are not permitted to participate in the intership
+        organizations: Organisations are not permitted to participate in the internship
         unauthenticated: You must %{signin} or %{signup} to participate.
         verified_only: Only verified users can participate, %{verify_account}.
-        debate_phase_not_open: Intership phase has finished and answers are not accepted anymore
+        debate_phase_not_open: Internship phase has finished and answers are not accepted anymore
     shared:
       share: Share
       share_comment: Comment on %{version_name} from process draft %{process_name}
@@ -113,13 +113,13 @@ en:
         zero: "%{count} votes"
         one: "%{count} vote"
         other: "%{count} votes"
-      debate_phase: "Intership phase"
+      debate_phase: "Internship phase"
       proposals_phase: "Proposals phase"
       allegations_phase: "Comments phase"
       debates:
-        zero: "No interships"
-        one: "%{count} intership"
-        other: "%{count} interships"
+        zero: "No internships"
+        one: "%{count} internship"
+        other: "%{count} internships"
       proposals:
         zero: "No proposals"
         one: "%{count} proposal"

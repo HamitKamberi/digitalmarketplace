@@ -33,7 +33,7 @@ en:
         sections_label: Sections where it will appear
         sections:
           homepage: Homepage
-          debates: Interships
+          debates: Internships
           proposals: Smart Specializations
           budgets: Participatory budgeting
           help_page: Help page
@@ -63,7 +63,7 @@ en:
         filters:
           all: All
           on_comments: Comments
-          on_debates: Interships
+          on_debates: Internships
           on_proposals: Smart Specializations
           on_users: Users
           on_system_emails: System emails
@@ -520,8 +520,8 @@ en:
       index:
         id: ID
         author: Author
-        title: Interships
-        no_debates: There are no interships.
+        title: Internships
+        no_debates: There are no internships.
     hidden_debates:
       index:
         filter: Filter
@@ -529,8 +529,8 @@ en:
           all: All
           with_confirmed_hide: Confirmed
           without_confirmed_hide: Pending
-        title: Hidden interships
-        no_hidden_debates: There are no hidden interships.
+        title: Hidden internships
+        no_hidden_debates: There are no hidden internships.
     documents:
       new:
         title: "Upload a document"
@@ -741,7 +741,7 @@ en:
       geozones: Geozones
       locales: Languages
       hidden_comments: Hidden comments
-      hidden_debates: Hidden interships
+      hidden_debates: Hidden internships
       hidden_proposals: Hidden proposals
       hidden_budget_investments: Hidden budget investments
       hidden_proposal_notifications: Hidden proposal notifications
@@ -775,7 +775,7 @@ en:
         information_texts: Custom information texts
         information_texts_menu:
           basic: "Basic customization"
-          debates: "Interships"
+          debates: "Internships"
           community: "Community"
           proposals: "Proposals"
           polls: "Polls"
@@ -800,7 +800,7 @@ en:
       dashboard: Proposals dashboard
       administrator_tasks: Resources requested
       dashboard_actions: Resources and actions
-      debates: "Interships"
+      debates: "Internships"
       comments: "Comments"
       local_census_records: Local census
       machine_learning: "AI / Machine learning"
@@ -1367,7 +1367,7 @@ en:
           booths: "Search booth by name or location"
           budget_investments: "Search investments by title, description or heading"
           comments: "Search comments"
-          debates: "Search interships by title or description"
+          debates: "Search internships by title or description"
           legislation_processes: "Search processes by title or description"
           legislation_proposals: "Search proposals by title or description"
           local_census_records: "Search by document number"
@@ -1470,7 +1470,7 @@ en:
           comment_votes: Comment votes
           comments: Comments
           debate_votes: Debate votes
-          debates: Interships
+          debates: Internships
           proposal_votes: Proposal votes
           proposals: Proposals
           budgets: Open budgets
@@ -1492,7 +1492,7 @@ en:
       graph:
         budget_investment_created: Budget investments created
         budget_investment_supported: Budget investments supported
-        debate_created: Intership created
+        debate_created: Internship created
         legislation_annotation_created: Legislation annotations created
         legislation_answer_created: Legislation answers created
         level_3_user: Level 3 users verified
@@ -1541,7 +1541,7 @@ en:
           amount: "Approved amount"
           winners: "Winner investment projects"
           sent: "Investment projects sent"
-        debates: "Interships"
+        debates: "Internships"
         polls: "Polls"
         proposals: "Proposals"
         title: "Sustainable Development Goals - Stats"
@@ -1692,7 +1692,7 @@ en:
       no_cards: There are no cards.
       feeds:
         proposals: Proposals
-        debates: Interships
+        debates: Internships
         processes: Processes
       new:
         header_title: New header
