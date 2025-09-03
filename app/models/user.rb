@@ -91,6 +91,9 @@ class User < ApplicationRecord
 
   attr_accessor :skip_password_validation, :login
 
+  enum role: { student: "student", stakeholder: "stakeholder" }
+  validates :role, presence: { message: "Choose your role" }
+
   scope :administrators, -> { joins(:administrator) }
   scope :moderators,     -> { joins(:moderator) }
   scope :organizations,  -> { joins(:organization) }

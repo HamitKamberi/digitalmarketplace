@@ -52,7 +52,9 @@
   <div class="small-12 medium-3 column">
 
     <aside class="margin-bottom">
-      <%= link_to t("debates.index.start_debate"), new_debate_path, class: "button expanded" %>
+      <% if current_user&.role != "student" %>
+        <%= link_to t("debates.index.start_debate"), new_debate_path, class: "button expanded" %>
+      <% end %>
       <%= render "shared/tag_cloud",
                 taggable: "Debate",
                 tags: ActsAsTaggableOn::Tag.unscoped.order(:name) %>

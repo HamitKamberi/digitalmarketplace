@@ -29,6 +29,25 @@
       <%= f.password_field :password_confirmation, autocomplete: "off",
                                                    label: t("devise_views.users.registrations.new.password_confirmation_label") %>
 
+      <div class="field role-selection">
+        <div class="radio-options">
+          <label class="role-option">
+            <%= f.radio_button :role, "student", id: "role_student" %>
+            <strong>Student</strong>
+          </label>
+
+          <label class="role-option">
+            <%= f.radio_button :role, "stakeholder", id: "role_stakeholder" %>
+            <strong>Stakeholder</strong>
+          </label>
+        </div>
+
+        <% if resource.errors[:role].present? %>
+          <div class="role-error">
+            <%= resource.errors[:role].first %>
+          </div>
+        <% end %>
+      </div>
       <%= f.check_box :terms_of_service,
                       label: t("devise_views.users.registrations.new.terms",
                                terms: new_window_link_to(t("devise_views.users.registrations.new.terms_link"),
@@ -42,3 +61,39 @@
 <% end %>
 
 <%= render "devise/shared/links" %>
+
+<style>
+  .role-selection {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .radio-options {
+    display: flex;
+    flex-direction: row;
+    gap: 2rem;
+    align-items: center;
+  }
+
+  .role-option {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .role-error {
+    color: #cc4b37;
+    font-size: 0.875rem;
+    font-weight: bold;
+    font-family: "Source Sans Pro", "Helvetica", "Arial", sans-serif !important;
+    margin-top: 0.25rem;
+  }
+
+  /* Optional: remove default label styles */
+  label[for="user_role_student"],
+  label[for="user_role_stakeholder"] {
+    display: none;
+  }
+</style>
+
+

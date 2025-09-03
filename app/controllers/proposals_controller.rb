@@ -37,6 +37,11 @@ class ProposalsController < ApplicationController
   end
 
   def create
+    if current_user.role == "student"
+      redirect_to proposals_path, alert: 'Students are not allowed to create proposals.'
+      return
+    end
+
     @proposal = Proposal.new(proposal_params.merge(author: current_user))
     if @proposal.save
       redirect_to created_proposal_path(@proposal), notice: I18n.t("flash.actions.create.proposal")

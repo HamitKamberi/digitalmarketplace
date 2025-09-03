@@ -99,9 +99,12 @@
 
   <div class="small-12 medium-3 column">
     <aside class="margin-bottom">
+    <% if current_user&.role != "student" %>
+
       <%= link_to t("proposals.index.start_proposal"),
                   new_proposal_path,
                   class: "button expanded" %>
+      <% end %>
 
       <% if params[:retired].blank? %>
         <%= render "categories" %>
