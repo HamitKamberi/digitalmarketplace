@@ -92,7 +92,7 @@ class User < ApplicationRecord
   attr_accessor :skip_password_validation, :login
 
   enum role: { student: "student", stakeholder: "stakeholder" }
-  validates :role, presence: { message: "Choose your role" }
+  validates :role, presence: { message: "Choose your role" }, if: :role_required?
 
   scope :administrators, -> { joins(:administrator) }
   scope :moderators,     -> { joins(:moderator) }
@@ -446,6 +446,10 @@ class User < ApplicationRecord
 
   def slug
     username.to_s.parameterize
+  end
+
+  def role_required?
+    registering_from_web && !organization?
   end
 
   private
