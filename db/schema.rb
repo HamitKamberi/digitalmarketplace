@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2025_09_03_124151) do
+ActiveRecord::Schema[7.1].define(version: 2025_10_07_135116) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "pg_trgm"
   enable_extension "plpgsql"
@@ -1628,6 +1628,7 @@ ActiveRecord::Schema[7.1].define(version: 2025_09_03_124151) do
     t.datetime "locked_at", precision: nil
     t.string "unlock_token"
     t.string "role"
+    t.text "description"
     t.index ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true
     t.index ["date_of_birth"], name: "index_users_on_date_of_birth"
     t.index ["email"], name: "index_users_on_email", unique: true

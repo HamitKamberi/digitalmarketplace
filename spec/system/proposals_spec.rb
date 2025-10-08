@@ -200,7 +200,7 @@ describe "Proposals" do
 
       visit proposal_path(proposal)
       expect(page).not_to have_content proposal.code
-      expect(page).not_to have_content("Proposal code:")
+      expect(page).not_to have_content("Post code:")
 
       expect(page).not_to have_content("Related content")
       expect(page).not_to have_button("Add related content")

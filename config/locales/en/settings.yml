@@ -18,7 +18,7 @@ en:
     max_votes_for_proposal_edit_description: "From this number of supports the author of a Proposal can no longer edit it"
     max_votes_for_debate_edit: "Number of votes from which a Internship can no longer be edited"
     max_votes_for_debate_edit_description: "From this number of votes the author of a Internship can no longer edit it"
-    proposal_code_prefix: "Prefix for Proposal codes"
+    proposal_code_prefix: "Prefix for post codes"
     proposal_code_prefix_description: "This prefix will appear in the Proposals before the creation date and its ID"
     featured_proposals_number: "Number of featured proposals"
     featured_proposals_number_description: "Number of featured proposals that will be displayed if the Featured proposals feature is active"

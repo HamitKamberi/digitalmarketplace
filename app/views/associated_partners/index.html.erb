@@ -1,28 +1,37 @@
-<h1>Associated Partners</h1>
+<h1 class="page-title">Associated Partners</h1>
 
 <div class="partner-list">
   <% @users.each do |user| %>
-    <div class="partner-card">
-      <div class="avatar">
-        <%= image_tag("avatar.png", alt: user.name, class: "avatar-img") %>
-      </div>
-      <div class="details">
-        <div class="name"><strong><%= user.name.presence || "No Name" %></strong></div>
-        <div class="username"><%= user.username.presence || "" %></div>
-        <% if user_signed_in? %>
-          <div class="email"><%= user.email %></div>
-          <% if user.official_position?%>
-            <div class="official-position">Role : <strong><%= user.official_position.presence %></strong></div>
+    <%= link_to user_path(user) do %>
+      <div class="partner-card">
+        <div class="avatar">
+          <%= image_tag("avatar.png", alt: user.name, class: "avatar-img") %>
+        </div>
+        <div class="details">
+          <div class="name"><strong><%= user.name.presence || "No Name" %></strong></div>
+          <div class="username"><%= user.username.presence || "" %></div>
+          <% if user_signed_in? %>
+            <div class="email"><%= user.email %></div>
+            <% if user.official_position? %>
+              <div class="official-position">Role : <strong><%= user.official_position.presence %></strong></div>
+            <% end %>
           <% end %>
-        <%end%>
-
+        </div>
       </div>
-    </div>
+    <% end %>
   <% end %>
+
 </div>
 
 
 <style>
+  .page-title {
+      font-size: 2rem;
+      text-align: left;
+      margin: 1rem auto;
+      padding: 0 1rem;
+      word-wrap: break-word;
+    }
     .partner-list {
     display: flex;
     flex-direction: column;

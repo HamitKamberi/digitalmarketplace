@@ -18,7 +18,7 @@ nl:
     max_votes_for_proposal_edit_description: "Vanaf dit aantal ondersteuningen kan de auteur van een voorstel dat niet meer bewerken"
     max_votes_for_debate_edit: "Number of votes from which a Debate can no longer be edited"
     max_votes_for_debate_edit_description: "Vanaf dit aantal ondersteuningen kan de auteur van een voorstel dat niet meer bewerken"
-    proposal_code_prefix: "Prefix for Proposal codes"
+    proposal_code_prefix: "Prefix for Post codes"
     proposal_code_prefix_description: "Dit voorvoegsel wordt weergegeven in de voorstellen vóór de aanmaakdatum en de bijbehorende id"
     featured_proposals_number: "Aantal uitgelichte voorstellen"
     featured_proposals_number_description: "Het aantal uitgelichte voorstellen dat zal worden getoond wanneer de uitgelichte voorstellen functie actief is"

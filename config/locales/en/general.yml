@@ -408,7 +408,7 @@ en:
       selected: "Selected proposal"
     show:
       author_deleted: User deleted
-      code: "Proposal code:"
+      code: "Post code:"
       comments_tab: Comments
       dashboard_proposal_link: Dashboard
       flag: This proposal has been flagged as inappropriate by several users.

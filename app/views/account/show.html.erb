@@ -24,13 +24,15 @@
             <% if @account.organization? %>
               <%= f.fields_for :organization do |fo| %>
                 <%= fo.text_field :name, autofocus: true, maxlength: Organization.name_max_length %>
-                <%= fo.text_field :responsible_name, autofocus: true, maxlength: Organization.responsible_name_max_length %>
+                <%= fo.text_field :responsible_name, maxlength: Organization.responsible_name_max_length %>
               <% end %>
               <%= f.phone_field :phone_number %>
-
             <% else %>
               <%= f.text_field :username, maxlength: User.username_max_length %>
             <% end %>
+
+            <%= f.text_area :description, placeholder: 'Description', rows: 4 %>
+
           </div>
 
           <div>
