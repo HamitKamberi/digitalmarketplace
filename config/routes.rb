@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   get 'associated_partners/index'
   mount Ckeditor::Engine => "/ckeditor"
   mount LetterOpenerWeb::Engine, at: "/letter_opener" if Rails.env.development?
-
+  resources :events, only: [:index, :new, :create]
   draw :custom
 
   draw :account

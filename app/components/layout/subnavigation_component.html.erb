@@ -25,8 +25,9 @@
                             controller_name == "associated_partners",
                             accesskey: "8" %>
     </li>
-
-
+    <li>
+      <%= link_to "Events", events_path, rel: "noopener" %>
+    </li>
     <% if feature?(:polls) %>
       <li>
         <%= layout_menu_link_to t("layouts.header.poll_questions"),
