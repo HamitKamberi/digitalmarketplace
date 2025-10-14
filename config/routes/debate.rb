@@ -1,4 +1,4 @@
-resources :debates do
+resources :debates, path: "internship" do
   member do
     put :flag
     put :unflag
