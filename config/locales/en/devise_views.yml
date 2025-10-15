@@ -39,7 +39,7 @@ en:
       registrations:
         new:
           password_confirmation_label: Confirm password
-          responsible_name_note: This would be the person representing the association/collective in whose name the proposals are presented
+          responsible_name_note: This would be the person representing the association/collective in whose name the posts are presented
           submit: Register
           title: Register as an organisation or collective
         success:

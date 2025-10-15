@@ -137,7 +137,7 @@ en:
         name_description: "This is the name of the participatory budget used on the header and cards whenever it is active"
         image_description: "If an image is uploaded it will be used as the banner on top of this participatory budget, otherwise the default color for budgets will be used."
         main_call_to_action: "Main call to action (optional)"
-        main_call_to_action_description: "This link will appear on main banner of this participatory budget and encourages your user to perform a specific action like creating a proposal, voting for existing ones, or learn more about the process."
+        main_call_to_action_description: "This link will appear on main banner of this participatory budget and encourages your user to perform a specific action like creating a post, voting for existing ones, or learn more about the process."
         info:
           budget_settings: "General participatory budget settings"
           staff_settings: "Administrators and Valuators assigned to the budget"
@@ -151,7 +151,7 @@ en:
         title_multiple: New multiple headings budget
         title_single: New single heading budget
       help:
-        budgets: "Participatory budgets allow citizens to propose and decide directly how to spend part of the budget, with monitoring and rigorous evaluation of proposals by the institution."
+        budgets: "Participatory budgets allow citizens to propose and decide directly how to spend part of the budget, with monitoring and rigorous evaluation of posts by the institution."
         groups:
           multiple: "Groups are meant to organize headings. After a group is created and it contains headings, it's possible to determine in how many headings a user can vote per group."
           single: "Groups are meant to organize headings, since this budget will only contain one heading, the same name can be used because it will not appear anywhere. You can just continue with the next step."
@@ -227,7 +227,7 @@ en:
         enabled_help_text: This phase will be public in the budget's phases timeline.
         image_description: "If an image is uploaded it will be displayed next to the description of this phase."
         main_call_to_action: "Main call to action (optional)"
-        main_call_to_action_description: "This link will appear on main banner of this participatory budget when this phase is enabled and encourages your user to perform a specific action like creating a proposal, voting for existing ones, or learn more about the process."
+        main_call_to_action_description: "This link will appear on main banner of this participatory budget when this phase is enabled and encourages your user to perform a specific action like creating a post, voting for existing ones, or learn more about the process."
         name_help_text: "This is the title of the phase users will read on the header whenever this phase is active."
         save_changes: Save changes
       index:
@@ -445,7 +445,7 @@ en:
           with_confirmed_hide: Confirmed
           without_confirmed_hide: Pending
         hidden_debate: Hidden debate
-        hidden_proposal: Hidden proposal
+        hidden_proposal: Hidden posts
         title: Hidden comments
         no_hidden_comments: There are no hidden comments.
     dashboard:
@@ -476,18 +476,18 @@ en:
           day_offset: Required days
           action_active: Active
           order: Order
-          published_proposal: Published proposal
+          published_proposal: Published post
           default:
             email: Email
             polls: Polls
             poster: Poster
         new:
-          creating: New action for the proposals dashboard
+          creating: New action for the posts dashboard
           back: Back to list
         create:
           notice: Action created successfully
         edit:
-          editing: Edit action for the proposals dashboard
+          editing: Edit action for the posts dashboard
           back: Back to list
         delete:
           success: Action successfully deleted
@@ -497,7 +497,7 @@ en:
           published_proposal_help_text: Mark this checkbox to create the action only for published proposals
       administrator_tasks:
         index:
-          description: "Resources published in the dashboard of proposals may include a button to be requested to administrators. User requests are shown below."
+          description: "Resources published in the dashboard of posts may include a button to be requested to administrators. User requests are shown below."
           title: Resources requested
           solve: Solve
           no_records: There are no resources requested
@@ -512,7 +512,7 @@ en:
           solving: Solve pending task
         form:
           solve: Mark as solved
-          proposal: Proposal
+          proposal: Post
           request: Requested resource
         update:
           success: The task has been marked as solved.
@@ -590,7 +590,7 @@ en:
           draft_phase: Draft phase
           draft_phase_description: If this phase is active, the process won't be listed on processes index. Allow to preview the process and create content before the start.
           allegations_phase: Comments phase
-          proposals_phase: Proposals phase
+          proposals_phase: Posts phase
           use_markdown: Use Markdown to format the text
           homepage_description: Here you can explain the content of the process
           banner_title: Header colors
@@ -630,7 +630,7 @@ en:
           title: Configure your process homepage
       proposals:
         index:
-          title: Proposals
+          title: Posts
           back: Back
           id: Id
           supports: Total supports
@@ -736,15 +736,15 @@ en:
       admin: Admin menu
       banner: Banners
       proposals: Smart Specializations
-      proposals_topics: Proposals topics
+      proposals_topics: Posts topics
       budgets: Participatory budgets
       geozones: Geozones
       locales: Languages
       hidden_comments: Hidden comments
       hidden_debates: Hidden internships
-      hidden_proposals: Hidden proposals
+      hidden_proposals: Hidden posts
       hidden_budget_investments: Hidden budget investments
-      hidden_proposal_notifications: Hidden proposal notifications
+      hidden_proposal_notifications: Hidden post notifications
       hidden_users: Hidden users
       administrators: Administrators
       managers: Managers
@@ -777,7 +777,7 @@ en:
           basic: "Basic customization"
           debates: "Internships"
           community: "Community"
-          proposals: "Proposals"
+          proposals: "Posts"
           polls: "Polls"
           legislation: "Collaborative legislation"
           budgets: "Budgets"
@@ -797,7 +797,7 @@ en:
       title_booths: Voting booths
       legislation: Collaborative Legislation
       users: Users
-      dashboard: Proposals dashboard
+      dashboard: Posts dashboard
       administrator_tasks: Resources requested
       dashboard_actions: Resources and actions
       debates: "Internships"
@@ -829,8 +829,8 @@ en:
     segment_recipient:
       all_users: All users
       administrators: Administrators
-      all_proposal_authors: Proposal authors (including archived and withdrawn)
-      proposal_authors: Proposal authors
+      all_proposal_authors: Post authors (including archived and withdrawn)
+      proposal_authors: Post authors
       investment_authors: Investment authors in the current budget
       feasible_and_undecided_investment_authors: "Authors of some investment in the current budget that does not comply with: [valuation finished unfesasible]"
       selected_investment_authors: Authors of selected investments in the current budget
@@ -916,9 +916,9 @@ en:
         send_pending: Send pending
         send_pending_notification: Pending notifications sent successfully
       proposal_notification_digest:
-        title: "Proposal notification digest"
-        description: "Gathers all proposal notifications for an user in a single message, to avoid too much emails."
-        preview_detail: "Users will only recieve notifications from the proposals they are following"
+        title: "Post notification digest"
+        description: "Gathers all post notifications for an user in a single message, to avoid too much emails."
+        preview_detail: "Users will only recieve notifications from the posts they are following"
       budget_investment_created:
         title: "Budget investment created"
         description: "Sent when a user creates a budget investment."
@@ -1122,7 +1122,7 @@ en:
         questions_title: "List of questions"
         table_title: "Title"
         edit_answers: Edit answers
-        see_proposal: "(See proposal)"
+        see_proposal: "(See post)"
       destroy:
         alert: "This action will remove the poll and all its associated questions."
         success_notice: "Poll deleted successfully"
@@ -1135,9 +1135,9 @@ en:
       index:
         create: "Create question"
         select_poll: Select Poll
-        successful_proposals_tab: "Successful proposals"
+        successful_proposals_tab: "Successful posts"
         create_question: "Create question"
-        table_proposal: "Proposal"
+        table_proposal: "Post"
       edit:
         title: "Edit Question"
       form:
@@ -1152,7 +1152,7 @@ en:
           add_image: "Add image"
           save_image: "Save image"
       show:
-        proposal: Original proposal
+        proposal: Original post
         author: Author
         question: Question
         edit_question: Edit question
@@ -1285,18 +1285,18 @@ en:
         no_results: No organizations found.
     proposals:
       index:
-        title: Proposals
+        title: Posts
         id: ID
         author: Author
         selected: Selected
         milestones: Milestones
-        no_proposals: There are no proposals.
+        no_proposals: There are no posts.
       show:
-        create_question: Add this proposal to a poll to be voted
+        create_question: Add this post to a poll to be voted
       form:
-        update: Update proposal
+        update: Update post
       update:
-        notice: Proposal updated successfully
+        notice: Post updated successfully
     hidden_proposals:
       index:
         filter: Filter
@@ -1304,8 +1304,8 @@ en:
           all: All
           with_confirmed_hide: Confirmed
           without_confirmed_hide: Pending
-        title: Hidden proposals
-        no_hidden_proposals: There are no hidden proposals.
+        title: Hidden posts
+        no_hidden_proposals: There are no hidden posts.
     hidden_proposal_notifications:
       index:
         filter: Filter
@@ -1334,9 +1334,9 @@ en:
             update: Map configuration updated successfully.
           form:
             submit: Update
-          how_to_enable: 'To show the map to users you must enable "Proposals and budget investments geolocation" on "Features" tab.'
+          how_to_enable: 'To show the map to users you must enable "Posts and budget investments geolocation" on "Features" tab.'
         dashboard:
-          title: Proposals dashboard
+          title: Posts dashboard
         remote_census:
           title: Remote Census configuration
           how_to_enable: 'To configure remote census (SOAP) you must enable "Configure connection to remote census (SOAP)" on "Features" tab.'
@@ -1369,13 +1369,13 @@ en:
           comments: "Search comments"
           debates: "Search internships by title or description"
           legislation_processes: "Search processes by title or description"
-          legislation_proposals: "Search proposals by title or description"
+          legislation_proposals: "Search posts by title or description"
           local_census_records: "Search by document number"
           organizations: "Name, email or phone number"
           poll_officers: "Search poll officers"
           poll_questions: "Search poll questions"
           polls: "Search polls by name or description"
-          proposals: "Search proposals by title, code, description or question"
+          proposals: "Search posts by title, code, description or question"
           proposal_notifications: "Search notifications by title or description"
           users: "Search user by name or email"
         search: "Search"
@@ -1388,7 +1388,7 @@ en:
       show_image: Show image
       moderated_content: "Check the content moderated by the moderators, and confirm if the moderation has been done correctly."
       view: View
-      proposal: Proposal
+      proposal: Post
       author: Author
       content: Content
       created_at: Created at
@@ -1471,8 +1471,8 @@ en:
           comments: Comments
           debate_votes: Debate votes
           debates: Internships
-          proposal_votes: Proposal votes
-          proposals: Proposals
+          proposal_votes: Post votes
+          proposals: Posts
           budgets: Open budgets
           budget_investments: Investment projects
           unverified_users: Unverified users
@@ -1480,12 +1480,12 @@ en:
           user_level_two: Level two users
           users: Total users
           verified_users: Verified users
-          verified_users_who_didnt_vote_proposals: Verified users who didn't votes proposals
+          verified_users_who_didnt_vote_proposals: Verified users who didn't votes posts
           visits: Visits
           votes: Total votes
         participatory_budgets: Participatory Budgets
         direct_messages: Direct messages
-        proposal_notifications: Proposal notifications
+        proposal_notifications: Post notifications
         incomplete_verifications: Incomplete verifications
         polls: Polls
         sdg: SDG
@@ -1496,7 +1496,7 @@ en:
         legislation_annotation_created: Legislation annotations created
         legislation_answer_created: Legislation answers created
         level_3_user: Level 3 users verified
-        proposal_created: Citizen proposals created
+        proposal_created: Citizen post created
         title: Graphs
         visits: Visits
       budgets:
@@ -1521,10 +1521,10 @@ en:
         total: Total
         users_who_have_sent_message: Users that have sent a private message
       proposal_notifications:
-        title: Proposal notifications
+        title: Post notifications
         total: Total
-        proposals_with_notifications: Proposals with notifications
-        not_available: "Proposal not available"
+        proposals_with_notifications: Posts with notifications
+        not_available: "Post not available"
       polls:
         title: Poll Stats
         all: Polls
@@ -1543,15 +1543,15 @@ en:
           sent: "Investment projects sent"
         debates: "Internships"
         polls: "Polls"
-        proposals: "Proposals"
+        proposals: "Posts"
         title: "Sustainable Development Goals - Stats"
     tags:
       create: Create topic
       index:
-        add_tag: Add a new proposal topic
-        title: Proposal topics
+        add_tag: Add a new post topic
+        title: Post topics
         topic: Topic
-        help: "When a user creates a proposal, the following topics are suggested as default tags."
+        help: "When a user creates a post, the following topics are suggested as default tags."
     users:
       columns:
         id: ID
@@ -1691,7 +1691,7 @@ en:
       create_card: Create card
       no_cards: There are no cards.
       feeds:
-        proposals: Proposals
+        proposals: Posts
         debates: Internships
         processes: Processes
       new:
@@ -1788,7 +1788,7 @@ en:
         delete_generated_content: "Generated content has been successfully deleted."
       output_files: "Output files:"
       related_content: "Related content"
-      related_content_description: "Adds automatically generated related content to proposals and participatory budget projects."
+      related_content_description: "Adds automatically generated related content to posts and participatory budget projects."
       script_info: "You will receive an email in %{email} when the script finishes running."
       script_name: "Script name:"
       select_script: "Select python script to execute"

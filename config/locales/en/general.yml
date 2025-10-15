@@ -152,7 +152,7 @@ en:
     not_saved: "prevented this %{resource} from being saved. <br>Please check the marked fields to know how to correct them:"
     policy: Privacy Policy
     banner: banner
-    proposal: Proposal
+    proposal: Post
     proposal_notification: "Notification"
     budget/investment: Investment
     budget/group: Budget Group
@@ -186,7 +186,7 @@ en:
         active_resources: Active resources
         community: Participants in your community
         show_proposal: Show post
-        preview_proposal: Preview proposal
+        preview_proposal: Preview post
         current_goal: Current goal
         supports:
           zero: No supports
@@ -253,7 +253,7 @@ en:
       notifiable_hidden: This resource is not available anymore.
   map:
     title: "Districts"
-    proposal_for_district: "Start a proposal for your district"
+    proposal_for_district: "Start a post for your district"
     start_proposal: Collaborate
   omniauth:
     facebook:
@@ -285,26 +285,26 @@ en:
         submit_button: Collaborate
     created:
       title: Congratulations! You have taken the first step.
-      motivation: "It is important to prepare the launch campaign for your proposal to be successful. The first few days are decisive."
-      motivation_2: "<strong>If you want recommendations to prepare the publishing leave your proposal as a draft and we will guide you.</strong>"
-      publish: No, I want to publish the proposal
+      motivation: "It is important to prepare the launch campaign for your post to be successful. The first few days are decisive."
+      motivation_2: "<strong>If you want recommendations to prepare the publishing leave your post as a draft and we will guide you.</strong>"
+      publish: No, I want to publish the post
       dashboard: Yes, I want help and I'll publish later
-      preview_title: This is how your proposal will look when you publish it
+      preview_title: This is how your post will look when you publish it
     share:
       improve_it: Improve your campaign and get more support.
       dashboard: See more information
-      message: "I supported the proposal %{title} in %{handle}. If you're interested, support it too!"
+      message: "I supported the post %{title} in %{handle}. If you're interested, support it too!"
     edit:
-      editing: Edit proposal
+      editing: Edit post
       form:
         submit_button: Save changes
-      show_link: View proposal
+      show_link: View post
     retire_form:
-      title: Withdraw proposal
-      warning: "If you withdraw the proposal it will still accept supports, but will be removed from the main list and a message will be visible to all users stating that the author considers the proposal should not be supported anymore"
+      title: Withdraw post
+      warning: "If you withdraw the post it will still accept supports, but will be removed from the main list and a message will be visible to all users stating that the author considers the post should not be supported anymore"
       retired_reason_blank: Choose an option
-      retired_explanation_placeholder: Explain shortly why you think this proposal should not receive more supports
-      submit_button: Withdraw proposal
+      retired_explanation_placeholder: Explain shortly why you think this post should not receive more supports
+      submit_button: Withdraw post
     retire_options:
       duplicated: Duplicated
       started: Already underway
@@ -333,14 +333,14 @@ en:
         archival_date: archived
         recommendations: recommendations
       recommendations:
-        without_results: There are not proposals related to your interests
+        without_results: There are not posts related to your interests
         without_interests: Follow smart specializations so we can give you recommendations
-        disable: "Recommendations for proposals will stop showing if you dismiss them. You can enable them again in 'My account' page"
+        disable: "Recommendations for posts will stop showing if you dismiss them. You can enable them again in 'My account' page"
         actions:
-          success: "Recommendations for proposals are now disabled for this account"
-          error: "An error has occured. Please go to 'My account' page to manually disable recommendations for proposals"
-      retired_proposals: Withdrawn proposals
-      retired_proposals_link: "Proposals withdrawn by the author"
+          success: "Recommendations for posts are now disabled for this account"
+          error: "An error has occured. Please go to 'My account' page to manually disable recommendations for posts"
+      retired_proposals: Withdrawn posts
+      retired_proposals_link: "Posts withdrawn by the author"
       selected_proposals: Selected topics
       selected_proposals_link: View selected topics
       archived_proposals: Archived topics
@@ -359,10 +359,10 @@ en:
       search_results:
         one: " containing the term <strong>'%{search_term}'</strong>"
         other: " containing the term <strong>'%{search_term}'</strong>"
-      select_order_long: "You are viewing proposals according to:"
+      select_order_long: "You are viewing posts according to:"
       start_proposal: Collaborate
-      title: Proposals
-      top_link_proposals: The most supported proposals by category
+      title: Posts
+      top_link_proposals: The most supported posts by category
       section_header:
         icon_alt: Smart Specializations icon
         title: Smart Specializations
@@ -376,22 +376,22 @@ en:
       more_info: How do citizen Smart Specializations work?
       recommendation_one: Do not use capital letters for the title or for whole sentences. On the internet, this is considered shouting. And nobody likes being shouted at.
       recommendation_three: Enjoy this space and the voices that fill it. It belongs to you too.
-      recommendation_two: Any proposal or comment suggesting illegal action will be deleted, as well as those intending to sabotage the debate spaces. Anything else is allowed.
+      recommendation_two: Any post or comment suggesting illegal action will be deleted, as well as those intending to sabotage the debate spaces. Anything else is allowed.
       recommendations_title: Recommendations
       start_new: Smart Specializations
     notice:
-      retired: The proposal has been withdrawn
-      published: The proposal has been published
+      retired: The post has been withdrawn
+      published: The post has been published
     proposal:
-      created: "You've created a proposal!"
+      created: "You've created a post!"
       share:
         guide: "Now you can share it so people can start supporting."
         edit: "Before it gets shared you'll be able to change the text as you like."
-        view_proposal: Not now, go to my proposal
-      already_supported: You have already supported this proposal. Share it!
+        view_proposal: Not now, go to my post
+      already_supported: You have already supported this post. Share it!
       support: Support
       support_label: "Support %{proposal}"
-      support_title: Support this proposal
+      support_title: Support this post
       supports:
         one: 1 support
         other: "%{count} supports"
@@ -403,26 +403,26 @@ en:
       supports_necessary: "%{number} supports needed"
       reason_for_supports_necessary: ""
       total_percent: 100%
-      archived: "This proposal has been archived and can't collect supports."
-      successful: "This proposal has reached the required supports."
-      selected: "Selected proposal"
+      archived: "This post has been archived and can't collect supports."
+      successful: "This post has reached the required supports."
+      selected: "Selected post"
     show:
       author_deleted: User deleted
       code: "Post code:"
       comments_tab: Comments
       dashboard_proposal_link: Dashboard
-      flag: This proposal has been flagged as inappropriate by several users.
+      flag: This post has been flagged as inappropriate by several users.
       notifications_tab: Notifications
       milestones_tab: Milestones
-      retired_warning: "The author considers this proposal should not receive more supports."
+      retired_warning: "The author considers this post should not receive more supports."
       retired_warning_link_to_explanation: Read the explanation before voting for it.
-      retired: Proposal withdrawn by the author
+      retired: Post withdrawn by the author
       share: Share
-      no_notifications: "This proposal has no notifications."
+      no_notifications: "This post has no notifications."
       embed_video_title: "Video on %{proposal}"
       title_video_url: "External video"
       author: Author
-      draft: Proposal in draft. Cannot yet get supports, nor does it appear in the list of proposals.
+      draft: Post in draft. Cannot yet get supports, nor does it appear in the list of proposals.
     update:
       form:
         submit_button: Save changes
@@ -442,7 +442,7 @@ en:
       request: Request
     create_request:
       success: The request has been successfully sent. We will contact you as soon as possible to inform you about it.
-      archived: This proposal is archived and can not request resources.
+      archived: This post is archived and can not request resources.
     progress:
       title: Graphic
       group_by_month: Monthly
@@ -454,9 +454,9 @@ en:
       new_action: New
     index:
       title: Edition
-      edit_proposal_link: Edit proposal
-      publish: Publish proposal
-      retire: Withdraw proposal
+      edit_post_link: Edit post
+      publish: Publish post
+      retire: Withdraw post
     new_request:
       links: Links
     resources:
@@ -487,8 +487,8 @@ en:
       hide_course: Hide course
     goal:
       target_supports:
-        one: Get %{count} support for your proposal
-        other: Get %{count} supports for your proposal
+        one: Get %{count} support for your post
+        other: Get %{count} supports for your post
       days:
         one: "%{count} day"
         other: "%{count} days"
@@ -502,7 +502,7 @@ en:
       comments: Comments
       latest_comments: Latest messages
     messages:
-      send_notification: Send notification to proposal followers
+      send_notification: Send notification to post followers
       previous_notifications: See previous notifications
     polls:
       index:
@@ -542,12 +542,12 @@ en:
         title: Poster preview
         poster_title: "Do not keep looking,"
         poster_subtitle: "back me up! ;)"
-        intro_text: "<strong>I am participating in %{org}</strong> with my own citizen proposal and only with your support can we make the city we all want"
-        proposal_code: "Code of the proposal: %{code}"
-        support: Support my proposal
-        footer: "<strong>Visit %{link} and support this proposal.</strong> The more, the better. Let's do our bit. Thank you!"
+        intro_text: "<strong>I am participating in %{org}</strong> with my own citizen post and only with your support can we make the city we all want"
+        proposal_code: "Code of the post: %{code}"
+        support: Support my post
+        footer: "<strong>Visit %{link} and support this post.</strong> The more, the better. Let's do our bit. Thank you!"
       new:
-        title: Poster of your proposal
+        title: Poster of your post
       options:
         preview: Preview
         download: Download
@@ -564,12 +564,12 @@ en:
     mailer:
       forward:
         subtitle: "If you support me, <br>we will achieve it."
-        support_button: Support this proposal
+        support_button: Support this post
         share_in: Share in
         hi: "Hello!"
-        introduction: I am writing to let you know that I am participating in %{org}, the platform we can decide which city we want. And for that, I created my own citizen proposal and now, I'm going to need your support! But do not worry because It is very simple.
-        support: "You just have to click on the button that you will see below 'Support this proposal' and you can inform yourself about before promoting it. Only the proposals that achieve the maximum support will be carried out by the City Council, and I thought that you, I'm sure you help me achieve it!"
-        share: "And if you also do me the great favor of sharing my proposal with your friends, family and contacts, it would be perfect!"
+        introduction: I am writing to let you know that I am participating in %{org}, the platform we can decide which city we want. And for that, I created my own citizen post and now, I'm going to need your support! But do not worry because It is very simple.
+        support: "You just have to click on the button that you will see below 'Support this post' and you can inform yourself about before promoting it. Only the posts that achieve the maximum support will be carried out by the City Council, and I thought that you, I'm sure you help me achieve it!"
+        share: "And if you also do me the great favor of sharing my post with your friends, family and contacts, it would be perfect!"
   polls:
     dates: "From %{open_at} to %{closed_at}"
     final_date: "Final recounts/Results"
@@ -628,7 +628,7 @@ en:
         title: "Questions"
         most_voted_answer: "Most voted answer: "
     poll_header:
-      back_to_proposal: Back to proposal
+      back_to_post: Back to post
   poll_questions:
     show:
       vote_answer: "Vote %{answer}"
@@ -642,7 +642,7 @@ en:
       title: "Send notification"
       submit_button: "Send notification"
       info_about_receivers: "This notification will be sent to <strong>%{count} people</strong> and it will be visible in %{proposal_page}.<br> Notifications are not sent immediately, users will periodically receive an email with all proposal notifications."
-      proposal_page: "the proposal's page"
+      proposal_page: "the post's page"
     show:
       back: "Go back to my content"
   shared:
@@ -690,11 +690,11 @@ en:
           notice: "You are now following this investment project! <br> We will notify you of changes as they occur so that you are up-to-date."
         destroy:
           notice: "You have stopped following this investment project! <br> You will no longer receive notifications related to this project."
-      proposal:
+      post:
           create:
-            notice: "Now you are following this citizen proposal! <br> We will notify you of changes as they occur so that you are up-to-date."
+            notice: "Now you are following this citizen post! <br> We will notify you of changes as they occur so that you are up-to-date."
           destroy:
-            notice: "You have stopped following this citizen proposal! <br> You will no longer receive notifications related to this proposal."
+            notice: "You have stopped following this citizen post! <br> You will no longer receive notifications related to this post."
     print:
       print_button: Print this info
     search: Search
@@ -712,11 +712,11 @@ en:
           other: "There are investments with the term '%{query}', you can participate in them instead of opening a new one."
         message: "You are seeing %{limit} of %{count} investments containing the term '%{query}'"
         see_all: "See all"
-      proposal:
+      post:
         found:
-          one: "There is a proposal with the term '%{query}', you can contribute to it instead of creating a new"
-          other: "There are proposals with the term '%{query}', you can contribute to them instead of creating a new"
-        message: "You are seeing %{limit} of %{count} proposals containing the term '%{query}'"
+          one: "There is a post with the term '%{query}', you can contribute to it instead of creating a new"
+          other: "There are posts with the term '%{query}', you can contribute to them instead of creating a new"
+        message: "You are seeing %{limit} of %{count} posts containing the term '%{query}'"
         see_all: "See all"
     tags_cloud:
       tags: Trending
@@ -786,9 +786,9 @@ en:
     show:
       deleted: Deleted
       deleted_debate: This internship has been deleted
-      deleted_proposal: This proposal has been deleted
+      deleted_post: This post has been deleted
       deleted_budget_investment: This investment project has been deleted
-      proposals: Proposals
+      proposals: Posts
       proposals_status: Status
       debates: Internships
       budget_investments: Budget investments
@@ -802,8 +802,8 @@ en:
           one: 1 Internship
           other: "%{count} Internships"
         proposals:
-          one: 1 Proposal
-          other: "%{count} Proposals"
+          one: 1 Post
+          other: "%{count} Posts"
         budget_investments:
           one: 1 Investment
           other: "%{count} Investments"
@@ -816,12 +816,12 @@ en:
       send_private_message: "Send private message"
       delete_alert: "Are you sure you want to delete your investment project? This action can't be undone"
     proposals:
-      retired: "Withdrawn proposal"
+      retired: "Withdrawn post"
       draft: Draft
       published: Published
-      see: "See proposal"
+      see: "See post"
       actions: Actions
-      retired_help_text: Dashboard not available for withdrawn proposals
+      retired_help_text: Dashboard not available for withdrawn posts
   votes:
     agree: I agree
     agree_label: "I agree with %{title}"
@@ -830,7 +830,7 @@ en:
     disagree_label: "I don't agree with %{title}"
     organizations: Organizations are not permitted to vote
     supports: Supports
-    verified_only: Only verified users can vote on proposals; %{verify_account}.
+    verified_only: Only verified users can vote on posts; %{verify_account}.
     budget_investments:
       not_verified: Only verified users can vote on investment projects; %{verify_account}.
       unfeasible: Unfeasible investment projects can not be supported
@@ -850,7 +850,7 @@ en:
         processes: See all processes
       no_items:
         debates: There are no internships right now
-        proposals: There are no proposals right now
+        proposals: There are no posts right now
         processes: There are no open processes right now
       process_label: Process
       see_process: See process
@@ -863,8 +863,8 @@ en:
         title: Recommended Internships
         btn_text_link: All recommended internships
       proposals:
-        title: Recommended proposals
-        btn_text_link: All recommended proposals
+        title: Recommended posts
+        btn_text_link: All recommended posts
       budget_investments:
         title: Recommended investments
       slide: "See %{title}"
@@ -893,7 +893,7 @@ en:
     score_positive: "Yes"
     score_negative: "No"
     content_title:
-      proposal: "Proposal"
+      proposal: "Post"
       debate: "Internship"
       budget_investment: "Budget investment"
   admin/widget:

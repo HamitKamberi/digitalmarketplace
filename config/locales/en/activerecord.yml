@@ -182,7 +182,7 @@ en:
         administrator_id: "Administrator"
         location: "Location additional info"
         organization_name: "If you are proposing in the name of a collective/organization, or on behalf of more people, write its name"
-        image: "Proposal descriptive image"
+        image: "Post descriptive image"
         image_title: "Image title"
         duration: "Time scope"
         feasibility_feasible: "Feasible"
@@ -283,7 +283,7 @@ en:
         password_confirmation: "Password confirmation"
         password: "Password"
         current_password: "Current password"
-        email_digest: "Receive a summary of proposal notifications"
+        email_digest: "Receive a summary of posts notifications"
         email_on_comment: "Notify me by email when someone comments on my contents"
         email_on_comment_reply: "Notify me by email when someone replies to my comments"
         email_on_direct_message: "Receive emails about direct messages"
@@ -295,7 +295,7 @@ en:
         public_activity: "Keep my list of activities public"
         public_interests: "Keep the elements I follow public"
         recommended_debates: "Recommend internships to me"
-        recommended_proposals: "Recommend proposals to me"
+        recommended_proposals: "Recommend posts to me"
       direct_message:
         title: "Title"
         body: "Message"
@@ -430,9 +430,9 @@ en:
         homepage: "Description"
         milestones_summary: Summary
       legislation/proposal:
-        description: "Proposal text"
-        summary: "Proposal summary"
-        title: "Proposal title"
+        description: "Post text"
+        summary: "Post summary"
+        title: "Post title"
         video_url: "Link to external video"
       legislation/draft_version:
         title: Version title
@@ -504,14 +504,14 @@ en:
         description: Description
         link: External link
         request_to_administrators: Include in the resource a button to request the resource from administrators
-        day_offset: How many days after the creation of the proposal do you want it to be activated?
-        required_supports: How much supports does the proposal have to get in order to be activated?
+        day_offset: How many days after the creation of the post do you want it to be activated?
+        required_supports: How much supports does the post have to get in order to be activated?
         order: You can enter the position where this action will be shown to the user in the list of actions
         active: Active
         action_type: Type
         action_type_proposed_action: "Proposed action"
         action_type_resource: "Resource"
-        published_proposal: "For published proposals?"
+        published_proposal: "For published posts?"
       dashboard/administrator_task:
         source: Source
         user: Executed by
@@ -608,7 +608,7 @@ en:
           attributes:
             document_number:
               not_in_census: "Not verified by Census"
-              already_voted: "Already voted this proposal"
+              already_voted: "Already voted this post"
         site_customization/page:
           attributes:
             slug:
