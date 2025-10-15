@@ -7,7 +7,7 @@
 
 <!-- Calendar container -->
 <div id="calendar" 
-     data-events='<%= @events.map { |e| { title: e.title, start: e.start_time_iso, end: e.end_time_iso, description: e.description } }.to_json.html_safe %>'>
+     data-events='<%= @events.map { |e| { id: e.id, title: e.title, start: e.start_time_iso, end: e.end_time_iso, description: e.description } }.to_json.html_safe %>'>
 </div>
 
 <!-- Event Modal -->
@@ -21,6 +21,17 @@
       <p id="modalDescription"></p>
       <p><strong>Start:</strong> <span id="modalStart"></span></p>
       <p><strong>End:</strong> <span id="modalEnd"></span></p>
+      <% if user_signed_in? && (current_user.organization? || current_user.role == "stakeholder") %>
+        <div class="modal-actions">
+          <a href="#" id="editEventLink" class="action-button edit-button" title="Edit Event">
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path>
+              <path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path>
+            </svg>
+            Edit
+          </a>
+        </div>
+      <% end %>
     </div>
   </div>
 </div>
@@ -151,6 +162,53 @@
         margin-top: 0;
     }
 
+    .modal-actions {
+        display: flex;
+        gap: 10px;
+        margin-top: 20px;
+        padding-top: 15px;
+        border-top: 1px solid #e0e0e0;
+    }
+
+    .action-button {
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        padding: 10px 16px;
+        border-radius: 6px;
+        text-decoration: none;
+        font-size: 14px;
+        font-weight: 500;
+        transition: all 0.2s ease;
+        cursor: pointer;
+    }
+
+    .edit-button {
+        background-color: #2196F3;
+        color: white;
+    }
+
+    .edit-button:hover {
+        background-color: #1976D2;
+        transform: translateY(-1px);
+        box-shadow: 0 2px 8px rgba(33, 150, 243, 0.3);
+    }
+
+    .delete-button {
+        background-color: #f44336;
+        color: white;
+    }
+
+    .delete-button:hover {
+        background-color: #d32f2f;
+        transform: translateY(-1px);
+        box-shadow: 0 2px 8px rgba(244, 67, 54, 0.3);
+    }
+
+    .action-button svg {
+        flex-shrink: 0;
+    }
+
 </style>
 
 <!-- FullCalendar JS (Global CDN build) -->
@@ -213,6 +271,15 @@
         document.getElementById('modalDescription').innerText = info.event.extendedProps.description || "No description";
         document.getElementById('modalStart').innerText = info.event.start.toLocaleString();
         document.getElementById('modalEnd').innerText = info.event.end ? info.event.end.toLocaleString() : "N/A";
+        
+        // Set up edit link with event ID
+        const eventId = info.event.id;
+        const editLink = document.getElementById('editEventLink');
+        
+        if (editLink) {
+          editLink.href = '/events/' + eventId + '/edit';
+        }
+        
         document.getElementById('eventModal').style.display = 'flex';
       }
     });
@@ -242,6 +309,11 @@
 
   function init() {
     console.log('Init function called, readyState:', document.readyState);
+    // Ensure modal is hidden on page load
+    const modal = document.getElementById('eventModal');
+    if (modal) {
+      modal.style.display = 'none';
+    }
     initializeCalendar();
     attachModalListeners();
   }
@@ -273,6 +345,11 @@
         console.log('Error during cleanup:', e);
       }
       calendar = null;
+    }
+    // Hide modal before caching
+    const modal = document.getElementById('eventModal');
+    if (modal) {
+      modal.style.display = 'none';
     }
   });
 })();
