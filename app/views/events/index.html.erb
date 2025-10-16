@@ -18,7 +18,8 @@
       <button id="closeModal" class="close-button" aria-label="Close modal">&times;</button>
     </div>
     <div class="modal-body">
-      <p id="modalDescription"></p>
+      <!-- changed to div for rich text / links -->
+      <div id="modalDescription"></div>
       <p><strong>Start:</strong> <span id="modalStart"></span></p>
       <p><strong>End:</strong> <span id="modalEnd"></span></p>
       <% if user_signed_in? && (current_user.organization? || current_user.role == "stakeholder") %>
@@ -45,14 +46,14 @@
 <style>
     .calendar-header {
         display: flex;
-        justify-content: space-between; /* Title left, button right */
-        align-items: center;            /* Vertically aligned */
+        justify-content: space-between;
+        align-items: center;
         margin-bottom: 20px;
     }
 
     #calendar {
-        max-width: 1500px; /* increased from 900px */
-        margin: 30px auto;  /* slightly less top/bottom margin to fit larger width */
+        max-width: 1500px;
+        margin: 30px auto;
         padding: 20px;
         background: rgb(229, 239, 253);
         border-radius: 10px;
@@ -60,17 +61,14 @@
         min-height: 600px;
     }
 
-    /* Ensure day numbers are visible */
     .fc .fc-daygrid-day-number {
         color: black !important;
     }
 
-    /* Event pointer */
     .fc-event {
         cursor: pointer;
     }
 
-    /* Modal Styles */
     .modal-overlay {
         display: none;
         position: fixed;
@@ -82,7 +80,7 @@
         justify-content: center;
         align-items: center;
         z-index: 1000;
-    
+    }
 
     .modal-content {
         background: white;
@@ -95,14 +93,8 @@
     }
 
     @keyframes modalFadeIn {
-        from {
-            opacity: 0;
-            transform: translateY(-20px);
-        }
-        to {
-            opacity: 1;
-            transform: translateY(0);
-        }
+        from { opacity: 0; transform: translateY(-20px); }
+        to { opacity: 1; transform: translateY(0); }
     }
 
     .modal-header {
@@ -144,10 +136,6 @@
         transform: rotate(90deg);
     }
 
-    .close-button:active {
-        background: #e0e0e0;
-    }
-
     .modal-body {
         padding: 20px;
     }
@@ -158,8 +146,18 @@
         line-height: 1.6;
     }
 
-    .modal-body p:first-child {
-        margin-top: 0;
+    /* 👇 Added this for wrapping and clickable links */
+    #modalDescription {
+        white-space: pre-wrap;
+        word-wrap: break-word;
+        overflow-wrap: anywhere;
+        color: #444;
+    }
+
+    #modalDescription a {
+        color: #1a73e8;
+        text-decoration: underline;
+        word-break: break-all;
     }
 
     .modal-actions {
@@ -193,25 +191,9 @@
         transform: translateY(-1px);
         box-shadow: 0 2px 8px rgba(33, 150, 243, 0.3);
     }
-
-    .delete-button {
-        background-color: #f44336;
-        color: white;
-    }
-
-    .delete-button:hover {
-        background-color: #d32f2f;
-        transform: translateY(-1px);
-        box-shadow: 0 2px 8px rgba(244, 67, 54, 0.3);
-    }
-
-    .action-button svg {
-        flex-shrink: 0;
-    }
-
 </style>
 
-<!-- FullCalendar JS (Global CDN build) -->
+<!-- FullCalendar JS -->
 <script src='https://cdn.jsdelivr.net/npm/@fullcalendar/core@6.1.8/index.global.min.js'></script>
 <script src='https://cdn.jsdelivr.net/npm/@fullcalendar/daygrid@6.1.8/index.global.min.js'></script>
 <script src='https://cdn.jsdelivr.net/npm/@fullcalendar/timegrid@6.1.8/index.global.min.js'></script>
@@ -221,8 +203,13 @@
 (function() {
   let calendar = null;
 
+  function linkifyText(text) {
+    if (!text) return "No description";
+    const urlRegex = /(https?:\/\/[^\s]+)/g;
+    return text.replace(urlRegex, '<a href="$1" target="_blank">$1</a>');
+  }
+
   function initializeCalendar() {
-    // Check if FullCalendar is loaded
     if (typeof FullCalendar === 'undefined') {
       console.error('FullCalendar not loaded yet');
       setTimeout(initializeCalendar, 100);
@@ -230,23 +217,14 @@
     }
 
     const calendarEl = document.getElementById('calendar');
-    if (!calendarEl) {
-      console.log('Calendar element not found');
-      return;
-    }
+    if (!calendarEl) return;
 
-    // Destroy existing calendar if it exists
     if (calendar) {
-      try {
-        calendar.destroy();
-      } catch(e) {
-        console.log('Error destroying calendar:', e);
-      }
+      try { calendar.destroy(); } catch(e) { console.log('Error destroying calendar:', e); }
       calendar = null;
     }
 
     const events = JSON.parse(calendarEl.dataset.events || '[]');
-    console.log('Initializing calendar with', events.length, 'events');
 
     calendar = new FullCalendar.Calendar(calendarEl, {
       initialView: 'dayGridMonth',
@@ -258,34 +236,23 @@
       events: events,
       timeZone: 'local',
 
-      // Tooltip for description
-      eventDidMount: function(info) {
-        if (info.event.extendedProps.description) {
-          info.el.setAttribute('title', info.event.extendedProps.description);
-        }
-      },
-
-      // Open modal on event click
       eventClick: function(info) {
         document.getElementById('modalTitle').innerText = info.event.title;
-        document.getElementById('modalDescription').innerText = info.event.extendedProps.description || "No description";
+        const descDiv = document.getElementById('modalDescription');
+        descDiv.innerHTML = linkifyText(info.event.extendedProps.description || "No description");
+
         document.getElementById('modalStart').innerText = info.event.start.toLocaleString();
         document.getElementById('modalEnd').innerText = info.event.end ? info.event.end.toLocaleString() : "N/A";
-        
-        // Set up edit link with event ID
+
         const eventId = info.event.id;
         const editLink = document.getElementById('editEventLink');
-        
-        if (editLink) {
-          editLink.href = '/events/' + eventId + '/edit';
-        }
-        
+        if (editLink) editLink.href = '/events/' + eventId + '/edit';
+
         document.getElementById('eventModal').style.display = 'flex';
       }
     });
 
     calendar.render();
-    console.log('Calendar rendered successfully');
   }
 
   function attachModalListeners() {
@@ -293,64 +260,35 @@
     const modal = document.getElementById('eventModal');
 
     if (closeBtn && modal) {
-      // Clone and replace to remove old listeners
       const newCloseBtn = closeBtn.cloneNode(true);
       closeBtn.parentNode.replaceChild(newCloseBtn, closeBtn);
 
-      newCloseBtn.addEventListener('click', function() {
-        modal.style.display = 'none';
-      });
-
-      modal.addEventListener('click', function(e) {
-        if(e.target === modal) modal.style.display = 'none';
-      });
+      newCloseBtn.addEventListener('click', () => modal.style.display = 'none');
+      modal.addEventListener('click', (e) => { if(e.target === modal) modal.style.display = 'none'; });
     }
   }
 
   function init() {
-    console.log('Init function called, readyState:', document.readyState);
-    // Ensure modal is hidden on page load
     const modal = document.getElementById('eventModal');
-    if (modal) {
-      modal.style.display = 'none';
-    }
+    if (modal) modal.style.display = 'none';
     initializeCalendar();
     attachModalListeners();
   }
 
-  // Multiple event listeners to catch all scenarios
-  document.addEventListener('turbolinks:load', function() {
-    console.log('turbolinks:load event fired');
-    init();
-  });
+  document.addEventListener('turbolinks:load', init);
+  document.addEventListener('DOMContentLoaded', init);
 
-  document.addEventListener('DOMContentLoaded', function() {
-    console.log('DOMContentLoaded event fired');
-    init();
-  });
-
-  // Immediate execution if document already loaded
   if (document.readyState === 'complete' || document.readyState === 'interactive') {
-    console.log('Document already loaded, initializing immediately');
     setTimeout(init, 1);
   }
 
-  // Clean up before cache
-  document.addEventListener('turbolinks:before-cache', function() {
-    console.log('Cleaning up calendar before cache');
+  document.addEventListener('turbolinks:before-cache', () => {
     if (calendar) {
-      try {
-        calendar.destroy();
-      } catch(e) {
-        console.log('Error during cleanup:', e);
-      }
+      try { calendar.destroy(); } catch(e) {}
       calendar = null;
     }
-    // Hide modal before caching
     const modal = document.getElementById('eventModal');
-    if (modal) {
-      modal.style.display = 'none';
-    }
+    if (modal) modal.style.display = 'none';
   });
 })();
 </script>
