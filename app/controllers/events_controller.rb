@@ -1,7 +1,8 @@
 class EventsController < ApplicationController
   before_action :authenticate_user!, except: [:index]
-  before_action :authorize_event_access, only: [:new, :create, :edit, :update, :destroy]
+  before_action :authorize_event_access, only: [:new, :create]
   before_action :set_event, only: [:edit, :update, :destroy]
+  before_action :authorize_event_owner, only: [:edit, :update, :destroy]
   skip_authorization_check
   
   def index
@@ -14,6 +15,7 @@ class EventsController < ApplicationController
 
   def create
     @event = Event.new(event_params)
+    @event.user = current_user
     if @event.save
       redirect_to events_path, notice: "Event created successfully!"
     else
@@ -50,6 +52,12 @@ class EventsController < ApplicationController
   def authorize_event_access
     unless current_user.organization? || current_user.role == "stakeholder"
       redirect_to root_path, alert: "You are not authorized to manage events."
+    end
+  end
+
+  def authorize_event_owner
+    unless @event.user_id == current_user.id
+      redirect_to events_path, alert: "You can only edit events that you created."
     end
   end
 end
