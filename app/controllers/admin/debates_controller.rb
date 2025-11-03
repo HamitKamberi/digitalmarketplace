@@ -11,6 +11,12 @@ class Admin::DebatesController < Admin::BaseController
     @debate = Debate.find(params[:id])
   end
 
+  def destroy
+    @debate = Debate.find(params[:id])
+    @debate.destroy
+    redirect_to admin_debates_path, notice: "Internship deleted"
+  end
+
   private
 
     def resource_model

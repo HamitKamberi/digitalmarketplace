@@ -30,11 +30,11 @@ module ActsAsTaggableOn
     end
 
     def increment_tag_custom_counter
-      tag.increment_custom_counter_for(taggable_type)
+      tag&.increment_custom_counter_for(taggable_type)
     end
 
     def decrement_tag_custom_counter
-      tag.decrement_custom_counter_for(taggable_type)
+      tag&.decrement_custom_counter_for(taggable_type)
     end
   end
 

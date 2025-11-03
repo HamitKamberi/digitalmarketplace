@@ -10,3 +10,64 @@
 //
 // The variables you can override are defined in the
 // `_settings.scss` and `_consul_settings.scss` files.
+
+@import url("https://fonts.googleapis.com/css2?family=Alegreya:wght@400;500;700&family=Source+Sans+3:wght@400;600;700&display=swap");
+
+// Typography
+$body-font-family: "Source Sans 3", "Source Sans Pro", "Helvetica", "Arial", sans-serif;
+$header-font-family: "Alegreya", Georgia, "Times New Roman", Times, serif;
+
+// Enforce public-site typography app-wide (do not affect admin)
+body.public {
+  font-family: "Source Sans 3", "Source Sans Pro", "Helvetica", "Arial", sans-serif !important;
+}
+
+body.public h1,
+body.public h2,
+body.public h3,
+body.public h4,
+body.public h5,
+body.public h6 {
+  font-family: "Alegreya", Georgia, "Times New Roman", Times, serif !important;
+}
+
+// Primary brand and derived
+// Brandbook: Primary color is Orange (#F06D21)
+$brand: #561613;
+$brand-secondary: darken($brand, 10%);
+$hover-color: darken($brand, 20%);
+
+// Text and borders
+$text-medium: #2f2f2f;
+$text-light: #cccedd;
+$border: #cccedd;
+
+// Surfaces and accents
+$highlight: #f1efeb;
+$highlight-soft: lighten($highlight, 2%);
+$light: #f1efeb;
+$featured: #f06d21;
+// Accents based on brandbook palette
+// Featured callouts use warm yellow
+$featured: #FDBD3D; // Dark Yellow
+
+// Feedback colors
+$success-bg: #E6F2EA; // lightened from Light Green base
+$success-border: #CFE3D5; // softer border
+$color-success: #016220; // Dark Green text
+
+$info-bg: #BAD4FF; // Light Blue
+$info-border: #B7C9ED; // Light Navy Blue
+$color-info: #193D69; // Dark Navy Blue text
+
+
+// Button hover color override (apply to all common button elements/classes)
+.button:hover,
+button:hover,
+input[type="submit"]:hover,
+input[type="button"]:hover,
+a.button:hover,
+.btn:hover {
+  background-color: #2C0B0A !important;
+  border-color: #2C0B0A !important;
+}

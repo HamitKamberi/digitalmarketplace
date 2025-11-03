@@ -14,6 +14,7 @@
       <th class="text-center"><%= t("admin.debates.index.id") %></th>
       <th><%= Debate.human_attribute_name(:title) %></th>
       <th><%= t("admin.debates.index.author") %></th>
+      <th><%= t("admin.shared.actions") rescue "Actions" %></th>
     </thead>
     <tbody>
       <% @debates.each do |debate| %>
@@ -21,6 +22,13 @@
           <td class="text-center"><%= debate.id %></td>
           <td><%= link_to debate.title, admin_debate_path(debate) %></td>
           <td><%= debate.author.username %></td>
+          <td>
+            <%= link_to "Delete",
+                        admin_debate_path(debate),
+                        method: :delete,
+                        data: { confirm: "Are you sure you want to delete this debate?" },
+                        class: "button alert small" %>
+          </td>
         </tr>
       <% end %>
     </tbody>

@@ -15,8 +15,7 @@
         <th class="text-center"><%= t("admin.proposals.index.id") %></th>
         <th><%= Proposal.human_attribute_name(:title) %></th>
         <th><%= t("admin.proposals.index.author") %></th>
-        <th><%= t("admin.proposals.index.milestones") %></th>
-        <th><%= t("admin.proposals.index.selected") %></th>
+        <th><%= t("admin.shared.actions") rescue "Actions" %></th>
       </tr>
     </thead>
 
@@ -26,8 +25,13 @@
           <td class="text-center"><%= proposal.id %></td>
           <td><%= link_to proposal.title, admin_proposal_path(proposal) %></td>
           <td><%= proposal.author.username %></td>
-          <td><%= proposal.milestones.count %></td>
-          <td><%= render Admin::Proposals::ToggleSelectionComponent.new(proposal) %></td>
+          <td>
+            <%= link_to "Delete",
+                        admin_proposal_path(proposal),
+                        method: :delete,
+                        data: { confirm: "Are you sure you want to delete this proposal?" },
+                        class: "button alert small" %>
+          </td>
         </tr>
       <% end %>
     </tbody>

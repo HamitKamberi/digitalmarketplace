@@ -18,12 +18,14 @@
 
 $admin-border-color: #d3d9dd;
 $admin-border:   2px solid $admin-border-color;
-$admin-color:    #245b80;
+// Align admin primary color with site brand color
+$admin-color:    $brand;
 $admin-text:     #434d54;
 
-$sidebar:        $admin-color;
-$sidebar-hover:  #25597c;
-$sidebar-active: #f4fcd0;
+// Sidebar colors derived from brand
+$sidebar:        $brand;
+$sidebar-hover:  color.adjust($brand, $lightness: -8%);
+$sidebar-active: color.adjust($brand, $lightness: 40%);
 
 $table-border:   $admin-border;
 $table-header:   #ecf1f6;

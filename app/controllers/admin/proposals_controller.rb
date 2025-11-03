@@ -41,6 +41,11 @@ class Admin::ProposalsController < Admin::BaseController
     end
   end
 
+  def destroy
+    @proposal.destroy
+    redirect_to admin_proposals_path, notice: "Post deleted"
+  end
+
   private
 
     def resource_model
