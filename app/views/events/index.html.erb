@@ -107,58 +107,162 @@
   }
   .mobile-week-nav button:hover { background-color: #561613; }
 
-  /* Modal Styles */
+  /* ===============================
+     MODAL STYLES (UPDATED & RESPONSIVE)
+     =============================== */
+
   .modal-overlay {
       display: none;
       position: fixed;
       top: 0; left: 0;
       width: 100%; height: 100%;
-      background: rgba(0,0,0,0.5);
+      background: rgba(0, 0, 0, 0.6);
       justify-content: center;
       align-items: center;
       z-index: 1000;
+      padding: 10px;
+      box-sizing: border-box;
+      overflow-y: auto; /* overlay scrolls if modal exceeds viewport */
   }
 
   .modal-content {
       background: #f1efeb;
       border-radius: 12px;
-      max-width: 700px;
       width: 90%;
+      max-width: 700px;
+      max-height: 90vh;
+      overflow-y: auto;
       box-shadow: 0 4px 20px rgba(0,0,0,0.3);
-      position: relative;
       animation: modalFadeIn 0.3s ease;
+      position: relative;
+      display: flex;
+      flex-direction: column;
   }
 
-  @keyframes modalFadeIn { from { opacity: 0; transform: translateY(-20px); } to { opacity: 1; transform: translateY(0); } }
+  @keyframes modalFadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+  }
 
-  .modal-header { display: flex; justify-content: space-between; align-items: center; padding: 20px 20px 10px 20px; border-bottom: 1px solid #e0e0e0; }
-  .modal-header h2 { margin: 0; font-size: 24px; color: #333; flex: 1; }
+  .modal-header {
+      position: sticky;
+      top: 0;
+      background: #f1efeb;
+      z-index: 10;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 20px 10px 20px;
+      border-bottom: 1px solid #e0e0e0;
+  }
 
-  .close-button { background: none; border: none; font-size: 32px; color: #999; cursor: pointer; padding: 0; width: 36px; height: 36px; display: flex; align-items: center; justify-content: center; border-radius: 50%; transition: all 0.2s ease; margin-left: 10px; flex-shrink: 0; }
+  .modal-header h2 {
+      margin: 0;
+      font-size: 24px;
+      color: #333;
+      flex: 1;
+  }
+
+  .close-button {
+      background: none;
+      border: none;
+      font-size: 32px;
+      color: #999;
+      cursor: pointer;
+      padding: 0;
+      width: 36px;
+      height: 36px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      transition: all 0.2s ease;
+      margin-left: 10px;
+      flex-shrink: 0;
+  }
   .close-button:hover { background: #f5f5f5; color: #333; }
   .close-button:active { background: #e0e0e0; }
 
-  .modal-body { padding: 20px; }
-  .modal-body p { margin: 10px 0; color: #555; line-height: 1.6; }
-  .modal-body p:first-child { margin-top: 0; }
+  .modal-body {
+      padding: 20px;
+      overflow-y: auto;
+      flex-grow: 1;
+  }
 
-  #modalDescription { white-space: pre-wrap; word-wrap: break-word; overflow-wrap: anywhere; color: #444; }
-  #modalDescription a { color: #561613; text-decoration: underline; word-break: break-all; }
-  #modalDescription a:hover { color: #561613; text-decoration: none; }
+  .modal-body p {
+      margin: 10px 0;
+      color: #555;
+      line-height: 1.6;
+  }
 
-  .modal-actions { display: flex; justify-content: space-between; align-items: center; gap: 10px; margin-top: 20px; padding-top: 15px; border-top: 1px solid #e0e0e0; }
-  .action-button { display: inline-flex; align-items: center; gap: 6px; padding: 10px 16px; border-radius: 6px; font-size: 14px; font-weight: 500; cursor: pointer; text-decoration: none; transition: all 0.2s ease; }
-  .edit-button { background-color: #561613; color: white; font-size: 11px; }
-  .edit-button:hover { background-color: #561613; transform: translateY(-1px); box-shadow: 0 2px 8px rgba(33,150,243,0.3); }
+  #modalDescription {
+      white-space: pre-wrap;
+      word-wrap: break-word;
+      overflow-wrap: anywhere;
+      color: #444;
+  }
+
+  #modalDescription a {
+      color: #561613;
+      text-decoration: underline;
+      word-break: break-all;
+  }
+
+  #modalDescription a:hover {
+      color: #561613;
+      text-decoration: none;
+  }
+
+  .modal-actions {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 10px;
+      margin-top: 20px;
+      padding-top: 15px;
+      border-top: 1px solid #e0e0e0;
+  }
+
+  .action-button {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 10px 16px;
+      border-radius: 6px;
+      font-size: 14px;
+      font-weight: 500;
+      cursor: pointer;
+      text-decoration: none;
+      transition: all 0.2s ease;
+  }
+
+  .edit-button {
+      background-color: #561613;
+      color: white;
+      font-size: 11px;
+  }
+
+  .edit-button:hover {
+      background-color: #561613;
+      transform: translateY(-1px);
+      box-shadow: 0 2px 8px rgba(33,150,243,0.3);
+  }
+
   .creator-info { font-size: 12px; color: #666; }
 
+  /* Responsive adjustments */
   @media (max-width: 768px) {
-    #calendar { padding: 10px; min-height: 400px; }
-    .modal-content { max-width: 95%; width: 95%; padding: 15px; }
-    .modal-header h2 { font-size: 20px; }
-    .modal-body p { font-size: 14px; }
-    .action-button { font-size: 12px; padding: 8px 12px; }
-    .mobile-week-nav { display: flex; }
+      #calendar { padding: 10px; min-height: 400px; }
+      .modal-content {
+          width: 95%;
+          max-width: 95%;
+          max-height: 85vh;
+          border-radius: 10px;
+      }
+      .modal-header h2 { font-size: 18px; }
+      .modal-body p { font-size: 14px; }
+      .action-button { font-size: 12px; padding: 8px 12px; }
+      .mobile-week-nav { display: flex; }
   }
 </style>
 
@@ -175,40 +279,60 @@
 
   function linkifyText(text) {
     if (!text) return text;
-    const escapeHtml = str => { const div = document.createElement('div'); div.textContent = str; return div.innerHTML; };
+    const escapeHtml = str => {
+      const div = document.createElement('div');
+      div.textContent = str;
+      return div.innerHTML;
+    };
     return escapeHtml(text).replace(/(https?:\/\/[^\s<]+[^<.,:;"')\]\s])/g, url =>
       `<a href="${url}" target="_blank" rel="noopener noreferrer">${url}</a>`);
   }
 
   function initializeCalendar() {
-    if (typeof FullCalendar === 'undefined') { setTimeout(initializeCalendar, 100); return; }
+    if (typeof FullCalendar === 'undefined') {
+      setTimeout(initializeCalendar, 100);
+      return;
+    }
     const calendarEl = document.getElementById('calendar');
     if (!calendarEl) return;
-    if (calendar) { try { calendar.destroy(); } catch(e){} calendar = null; }
+    if (calendar) {
+      try { calendar.destroy(); } catch(e){}
+      calendar = null;
+    }
 
     const events = JSON.parse(calendarEl.dataset.events || '[]');
     const isMobile = window.innerWidth <= 768;
 
     calendar = new FullCalendar.Calendar(calendarEl, {
       initialView: isMobile ? 'listWeek' : 'dayGridMonth',
-      headerToolbar: isMobile ? { left: '', center: 'title', right: '' } : { left: 'prev,next today', center: 'title', right: 'dayGridMonth,timeGridWeek,timeGridDay' },
+      headerToolbar: isMobile
+        ? { left: '', center: 'title', right: '' }
+        : { left: 'prev,next today', center: 'title', right: 'dayGridMonth,timeGridWeek,timeGridDay' },
       events: events,
       timeZone: 'local',
       displayEventTime: true,
       eventTimeFormat: { hour: 'numeric', minute: '2-digit', meridiem: 'short' },
 
       eventDidMount: function(info) {
-        if (info.event.extendedProps.description) info.el.setAttribute('title', info.event.extendedProps.description);
-        if (isMobile) { info.el.style.whiteSpace = 'normal'; info.el.style.fontSize = '14px'; }
+        if (info.event.extendedProps.description)
+          info.el.setAttribute('title', info.event.extendedProps.description);
+        if (isMobile) {
+          info.el.style.whiteSpace = 'normal';
+          info.el.style.fontSize = '14px';
+        }
       },
 
       eventClick: function(info) {
         document.getElementById('modalTitle').innerText = info.event.title;
-        document.getElementById('modalDescription').innerHTML = linkifyText(info.event.extendedProps.description || "No description");
+        document.getElementById('modalDescription').innerHTML =
+          linkifyText(info.event.extendedProps.description || "No description");
         const creatorDiv = document.getElementById('modalCreator');
-        creatorDiv.innerHTML = info.event.extendedProps.creator_email ? `Created by: ${info.event.extendedProps.creator_email}` : 'Created by: Unknown';
+        creatorDiv.innerHTML = info.event.extendedProps.creator_email
+          ? `Created by: ${info.event.extendedProps.creator_email}`
+          : 'Created by: Unknown';
         document.getElementById('modalStart').innerText = info.event.start.toLocaleString();
-        document.getElementById('modalEnd').innerText = info.event.end ? info.event.end.toLocaleString() : "N/A";
+        document.getElementById('modalEnd').innerText =
+          info.event.end ? info.event.end.toLocaleString() : "N/A";
 
         const currentUserId = parseInt(calendarEl.dataset.currentUserId);
         const eventUserId = info.event.extendedProps.user_id;
@@ -217,7 +341,9 @@
           if (currentUserId && eventUserId && currentUserId === eventUserId) {
             editLink.style.display = 'inline-flex';
             editLink.href = '/events/' + info.event.id + '/edit';
-          } else { editLink.style.display = 'none'; }
+          } else {
+            editLink.style.display = 'none';
+          }
         }
 
         document.getElementById('eventModal').style.display = 'flex';
@@ -230,7 +356,7 @@
     if (isMobile) {
       const navContainer = document.getElementById('mobileWeekNav');
       navContainer.innerHTML = '';
-      ['prev','today','next'].forEach(cmd => {
+      ['prev', 'today', 'next'].forEach(cmd => {
         const btn = document.createElement('button');
         btn.textContent = cmd.charAt(0).toUpperCase() + cmd.slice(1);
         btn.addEventListener('click', () => calendar[cmd]());
@@ -246,7 +372,9 @@
       const newCloseBtn = closeBtn.cloneNode(true);
       closeBtn.parentNode.replaceChild(newCloseBtn, closeBtn);
       newCloseBtn.addEventListener('click', () => modal.style.display = 'none');
-      modal.addEventListener('click', e => { if(e.target === modal) modal.style.display = 'none'; });
+      modal.addEventListener('click', e => {
+        if (e.target === modal) modal.style.display = 'none';
+      });
     }
   }
 
@@ -259,10 +387,14 @@
 
   document.addEventListener('turbolinks:load', init);
   document.addEventListener('DOMContentLoaded', init);
-  if (document.readyState === 'complete' || document.readyState === 'interactive') setTimeout(init, 1);
+  if (document.readyState === 'complete' || document.readyState === 'interactive')
+    setTimeout(init, 1);
 
   document.addEventListener('turbolinks:before-cache', () => {
-    if (calendar) { try { calendar.destroy(); } catch(e){} calendar = null; }
+    if (calendar) {
+      try { calendar.destroy(); } catch(e){}
+      calendar = null;
+    }
     const modal = document.getElementById('eventModal');
     if (modal) modal.style.display = 'none';
   });
