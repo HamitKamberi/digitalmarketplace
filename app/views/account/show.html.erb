@@ -6,9 +6,7 @@
       <%= link_to t("account.show.erase_account_link"), users_registrations_delete_form_path, class: "delete" %>
     </div>
 
-    <%= render Shared::AvatarComponent.new(@account, size: 100, class: "margin-bottom") %>
-
-    <h1 class="inline-block"><%= t("account.show.title") %></h1>
+    <%= render Shared::AvatarComponent.new(@account, size: 100, class: "margin-bottom", show_delete_button: true) %>
 
     <%= render Account::SignInInfoComponent.new(@account) %>
 
@@ -19,6 +17,9 @@
         <div class="small-12 medium-7 column">
 
           <h2><%= t("account.show.personal") %></h2>
+          <% unless @account.avatar.attached? %>
+            <%= f.file_field :avatar %>
+          <% end %>
 
           <div class="small-12 medium-10">
             <% if @account.organization? %>
