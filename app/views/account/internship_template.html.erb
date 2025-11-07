@@ -1,0 +1,68 @@
+<h1 style="margin-left: 10px; margin-right: 10px;">Internship Data</h1>
+<hr>
+
+<%= form_with model: @account, url: save_internship_account_path, method: :post, local: true, scope: :account do |f| %>
+
+  <!-- Motivational Statement Box -->
+  <fieldset style="margin-left: 10px; margin-right: 10px;">
+    <legend><h2>Motivational Statement</h2></legend>
+    <%= f.text_area :motivation_statement, rows: 4, placeholder: "Briefly describe (2–4 sentences) why you are seeking an internship, your interest in the chosen field, and what motivates you to work." %>
+  </fieldset>
+
+  <!-- Educational Background Box -->
+  <fieldset  style="margin-left: 10px; margin-right: 10px;">
+    <legend><h2>Educational Background</h2></legend>
+    <table>
+      <tr>
+        <td>
+          <%= f.text_field :current_degree_program, placeholder: "(e.g. Business Administration, University X)" %>
+        </td>
+        <td>
+          <%= f.number_field :expected_graduation_year, placeholder: "Enter year" %>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <%= f.text_area :key_courses_and_projects, rows: 3, placeholder: "List key courses and projects" %>
+        </td>
+        <td>
+          <%= f.text_area :academic_achievements, rows: 3, placeholder: "List your academic achievements" %>
+        </td>
+      </tr>
+    </table>
+  </fieldset>
+
+  <!-- Internship Preferences Box -->
+  <fieldset style="margin-left: 10px; margin-right: 10px;">
+    <legend><h2>Internship Preferences</h2></legend>
+    <table>
+      <tr>
+        <td>
+          <%= f.text_field :preferred_duration, placeholder: "(e.g., May 2026 – September 2026, 3 months)" %>
+        </td>
+        <td>
+          <%= f.select :on_site_or_remote, ["On-site", "Remote", "Hybrid"] %>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <%= f.number_field :planned_working_hours_per_week, placeholder: "Enter hours" %>
+        </td>
+        <td>
+          <%= f.text_field :type_of_internship, placeholder: "(e.g., Marketing, Engineering, etc.)" %>
+        </td>
+      </tr>
+    </table>
+  </fieldset>
+
+  <!-- Language Competences Box -->
+  <fieldset style="margin-left: 10px; margin-right: 10px;">
+    <legend><h2>Language Competences</h2></legend>
+    <%= f.text_area :language_competences, placeholder: "Eg. English (Fluent), German (Intermediate)" %>
+  </fieldset>
+
+  <div style="margin-left: 10px; margin-right: 10px;">
+    <%= f.submit "Save", class: "button" %>
+  </div>
+
+<% end %>

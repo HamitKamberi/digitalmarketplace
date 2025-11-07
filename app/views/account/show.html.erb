@@ -27,11 +27,13 @@
                 <%= fo.text_field :responsible_name, maxlength: Organization.responsible_name_max_length %>
               <% end %>
               <%= f.phone_field :phone_number %>
+              <%= f.text_area :description, placeholder: 'Description', rows: 4 %>
+            <% elsif @account.role == "stakeholder" %>
+              <%= f.text_field :username, maxlength: User.username_max_length %>
+              <%= f.text_area :description, placeholder: 'Description', rows: 4 %>
             <% else %>
               <%= f.text_field :username, maxlength: User.username_max_length %>
             <% end %>
-
-            <%= f.text_area :description, placeholder: 'Description', rows: 4 %>
 
           </div>
 
@@ -93,6 +95,70 @@
 
           <%= f.submit t("account.show.save_changes_submit"), class: "button margin-top" %>
         </div>
+        <% if @account.role == "student" %>
+          <div class="small-12 medium-5 column">
+            <div class="right-side-headings">
+              <h3>Motivational Statement</h3>
+              <% if @account.motivation_statement.present? %>
+                
+                <p><%= @account.motivation_statement %></p>
+              <% end %>
+              <h3>Educational Background</h3>
+              <% if @account.current_degree_program.present? || @account.expected_graduation_year.present? || @account.key_courses_and_projects.present? || @account.academic_achievements.present? %>
+                <% if @account.current_degree_program.present? %>
+                  <small><b>Current degree program</b></small>
+                  <p><%= @account.current_degree_program %></p>
+                <% end %>
+
+                <% if @account.expected_graduation_year.present? %>
+                  <small><b>Expected graduation year</b></small>
+                  <p><%= @account.expected_graduation_year %></p>
+                <% end %>
+
+                <% if @account.key_courses_and_projects.present? %>
+                  <small><b>Key courses and projects</b></small>
+                  <p><%= @account.key_courses_and_projects %></p>
+                <% end %>
+
+                <% if @account.academic_achievements.present? %>
+                  <small><b>Academic achievements</b></small>
+                  <p><%= @account.academic_achievements %></p>
+                <% end %>
+              <% end %>
+              <h3>Internship Preferences</h3>
+              <% if @account.preferred_duration.present? || @account.on_site_or_remote.present? || @account.planned_working_hours_per_week.present? || @account.type_of_internship.present? %>
+                
+                <% if @account.preferred_duration.present? %>
+                  <small><b>Preferred duration</b></small>
+                  <p><%= @account.preferred_duration %></p>
+                <% end %>
+
+                <% if @account.on_site_or_remote.present? %>
+                  <small><b>On-site or Remote</b></small>
+                  <p><%= @account.on_site_or_remote %></p>
+                <% end %>
+
+                <% if @account.planned_working_hours_per_week.present? %>
+                  <small><b>Planned working hours per week</b></small>
+                  <p><%= @account.planned_working_hours_per_week %></p>
+                <% end %>
+
+                <% if @account.type_of_internship.present? %>
+                  <small><b>Type of internship</b></small>
+                  <p><%= @account.type_of_internship %></p>
+                <% end %>
+              <% end %>
+              <h3>Language Competences</h3>
+              <% if @account.language_competences.present? %>
+                <p><%= @account.language_competences %></p>
+              <% end %>
+
+            </div>
+
+            <%= link_to "Edit your data", internship_template_account_path, class: "button margin-top" %>
+
+          </div>
+        <% end %>
       </div>
     <% end %>
 

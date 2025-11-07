@@ -1,20 +1,90 @@
-<div class="activity row margin-top">
-  <div class="small-12 column">
+<div class="small-12 column">
+  <div class="row">
+    <div class="small-12 medium-7 column">
+      <h2 class="inline-block">
+        <%= render Shared::AvatarComponent.new(@user, size: 60) %>
+        <%= @user.name %>
+        <% if current_user&.administrator? %>
+          <small><%= @user.email %></small>
+        <% end %>
+      </h2>
+      <%= render Users::PublicActivityComponent.new(@user) %>
+    </div>
+      <% if @user.role == "student" %>
+        <div class="small-12 medium-5 column">
+          <div class="right-side-headings">
 
-    <h2 class="inline-block">
-      <%= render Shared::AvatarComponent.new(@user, size: 60) %>
-      <%= @user.name %>
-      <% if current_user&.administrator? %>
-        <small><%= @user.email %></small>
+            <% if @user.motivation_statement.present? %>
+              <h3>Motivational Statement</h3>
+              <p><%= @user.motivation_statement %></p>
+            <% end %>
+
+            <% if @user.current_degree_program.present? || @user.expected_graduation_year.present? || @user.key_courses_and_projects.present? || @user.academic_achievements.present? %>
+              <h3>Educational Background</h3>
+
+              <% if @user.current_degree_program.present? %>
+                <small><b>Current degree program</b></small>
+                <p><%= @user.current_degree_program %></p>
+              <% end %>
+
+              <% if @user.expected_graduation_year.present? %>
+                <small><b>Expected graduation year</b></small>
+                <p><%= @user.expected_graduation_year %></p>
+              <% end %>
+
+              <% if @user.key_courses_and_projects.present? %>
+                <small><b>Key courses and projects</b></small>
+                <p><%= @user.key_courses_and_projects %></p>
+              <% end %>
+
+              <% if @user.academic_achievements.present? %>
+                <small><b>Academic achievements</b></small>
+                <p><%= @user.academic_achievements %></p>
+              <% end %>
+            <% end %>
+
+            <% if @user.preferred_duration.present? || @user.on_site_or_remote.present? || @user.planned_working_hours_per_week.present? || @user.type_of_internship.present? %>
+              <h3>Internship Preferences</h3>
+
+              <% if @user.preferred_duration.present? %>
+                <small><b>Preferred duration</b></small>
+                <p><%= @user.preferred_duration %></p>
+              <% end %>
+
+              <% if @user.on_site_or_remote.present? %>
+                <small><b>On-site or Remote</b></small>
+                <p><%= @user.on_site_or_remote %></p>
+              <% end %>
+
+              <% if @user.planned_working_hours_per_week.present? %>
+                <small><b>Planned working hours per week</b></small>
+                <p><%= @user.planned_working_hours_per_week %></p>
+              <% end %>
+
+              <% if @user.type_of_internship.present? %>
+                <small><b>Type of internship</b></small>
+                <p><%= @user.type_of_internship %></p>
+              <% end %>
+            <% end %>
+
+            <% if @user.language_competences.present? %>
+              <h3>Language Competences</h3>
+              <p><%= @user.language_competences %></p>
+            <% end %>
+
+          </div>
+        </div>
+      <% else %>
+        <div class="small-12 medium-5 column">
+          <div class="right-side-headings">
+            <% if @user.description.present? %>
+              <h3><%= t("users.show.description") %></h3>
+              <p><%= simple_format(@user.description) %></p>
+            <% end %>
+          </div>
+        </div>
       <% end %>
-    </h2>
-    <% if @user.description.present? %>
-      <section class="user-description callout secondary radius margin-vertical">
-        <h3><%= t("users.show.description") %></h3>
-        <p><%= simple_format(@user.description) %></p>
-      </section>
-    <% end %>
-    <%= render Users::PublicActivityComponent.new(@user) %>
+
   </div>
 </div>
 
