@@ -9,7 +9,15 @@
           </div>
         <% end %>
       <% else %>
-        <%= render Comments::AvatarComponent.new(comment) %>
+        
+        <% if comment.user.avatar&.attached? %>
+          <%= image_tag(
+                url_for(comment.user.avatar.variant(resize_to_fill: [32, 32])),
+                style: "width: 32px; height: 32px; border-radius: 50%; object-fit: cover;",
+              ) %>
+        <% else %>
+          <%= render Comments::AvatarComponent.new(comment) %>
+        <% end %>
 
         <div class="comment-info">
 

@@ -4,7 +4,14 @@
     <%= t("shared.author_info.author_deleted") %>
   </span>
 <% else %>
-  <%= render Shared::AvatarComponent.new(resource.author, size: 32, class: "author-photo") %>
+    <% if resource.author.avatar&.attached? %>
+      <%= image_tag(
+            url_for(resource.author.avatar.variant(resize_to_fill: [32, 32])),
+            style: "width: 32px; height: 32px; border-radius: 50%; object-fit: cover;",
+          ) %>
+    <% else %>
+        <%= render Shared::AvatarComponent.new(resource.author, size: 32, class: "author-photo") %>
+    <% end %>
   <span class="author">
     <%= link_to resource.author.name, user_path(resource.author) %>
     <% if resource.author.official_position.present? %>

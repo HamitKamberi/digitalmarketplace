@@ -6,8 +6,23 @@
       <%= link_to t("account.show.erase_account_link"), users_registrations_delete_form_path, class: "delete" %>
     </div>
 
-    <%= render Shared::AvatarComponent.new(@account, size: 100, class: "margin-bottom") %>
+    <% if @account.avatar&.attached? %>
+      <div class="avatar-wrapper" style="--avatar-size: clamp(64px, 10vw, 100px);">
+        <%= image_tag(
+              url_for(@account.avatar.variant(resize_to_fill: [200, 200])),
+              style: "width: 100%; height: 100%; border-radius: 50%; object-fit: cover;",
+            ) %>
 
+        <%= button_to "×",
+          delete_avatar_account_path,
+          method: :delete,
+          form: { class: "delete-avatar-form" },
+          data: { confirm: "Are you sure you want to remove your avatar?" },
+          class: "avatar-delete-btn" %>
+      </div>
+    <% else %>
+      <%= render Shared::AvatarComponent.new(@account, size: 100) %>
+    <% end %>
     <h1 class="inline-block"><%= t("account.show.title") %></h1>
 
     <%= render Account::SignInInfoComponent.new(@account) %>
@@ -19,6 +34,9 @@
         <div class="small-12 medium-7 column">
 
           <h2><%= t("account.show.personal") %></h2>
+          <% unless @account.avatar.attached? %>
+            <%= f.file_field :avatar %>
+          <% end %>
 
           <div class="small-12 medium-10">
             <% if @account.organization? %>
@@ -98,3 +116,45 @@
 
   </div>
 </div>
+
+
+
+<style>
+  .avatar-wrapper {
+    position: relative;
+    display: inline-block;
+    width: var(--avatar-size, 100px);
+    height: var(--avatar-size, 100px);
+  }
+
+  .avatar-wrapper img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+  }
+
+  .avatar-delete-btn {
+    position: absolute;
+    top: 0.15rem;
+    right: 0.15rem;
+    background: rgba(255,255,255,0.9);
+    border: black 0.5px solid;
+    font-size: calc(var(--avatar-size, 100px) * 0.18);
+    line-height: 1;
+    color: #ff0000;
+    cursor: pointer;
+    width: calc(var(--avatar-size, 100px) * 0.28);
+    height: calc(var(--avatar-size, 100px) * 0.28);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    padding: 0;
+  }
+
+  @media (max-width: 420px) {
+    .avatar-wrapper { --avatar-size: 64px; }
+  }
+</style>
