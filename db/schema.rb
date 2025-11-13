@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2025_10_17_085031) do
+ActiveRecord::Schema[7.1].define(version: 2025_11_06_134330) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "pg_trgm"
   enable_extension "plpgsql"
@@ -1640,6 +1640,16 @@ ActiveRecord::Schema[7.1].define(version: 2025_10_17_085031) do
     t.string "unlock_token"
     t.string "role"
     t.text "description"
+    t.text "motivation_statement"
+    t.string "current_degree_program"
+    t.integer "expected_graduation_year"
+    t.text "key_courses_and_projects"
+    t.text "academic_achievements"
+    t.string "preferred_duration"
+    t.string "on_site_or_remote"
+    t.integer "planned_working_hours_per_week"
+    t.string "type_of_internship"
+    t.text "language_competences"
     t.index ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true
     t.index ["date_of_birth"], name: "index_users_on_date_of_birth"
     t.index ["email"], name: "index_users_on_email", unique: true
