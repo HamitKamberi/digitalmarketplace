@@ -20,7 +20,7 @@
       </li>
     <% end %>
     <li>
-      <%= layout_menu_link_to t("layouts.header.associated_partners"),
+      <%= layout_menu_link_to "Members",
                             "/associated_partners/index",
                             controller_name == "associated_partners",
                             accesskey: "8" %>
@@ -52,9 +52,6 @@
                                 accesskey: "5" %>
       </li>
     <% end %>
-     <li>
-      <%= link_to "About Us", "https://impactlab.challenge-eu.eu/about_us", rel: "noopener" %>
-    </li>
     <% if feature?(:help_page) %>
       <li>
         <%= layout_menu_link_to t("layouts.header.help"),

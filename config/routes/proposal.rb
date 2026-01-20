@@ -1,4 +1,4 @@
-resources :proposals, path: "smart_specialization" do
+resources :proposals, path: "collaborate" do
   resource :dashboard, only: [:show], controller: "dashboard" do
     collection do
       patch :publish

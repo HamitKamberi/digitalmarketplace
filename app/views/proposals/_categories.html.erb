@@ -3,10 +3,21 @@
 <br>
 
 <ul id="categories" class="no-bullet categories">
-  <% @categories.each do |category| %>
+  <% @categories.reject { |c| c.name == "Idea Forum" }.each do |category| %>
     <li class="inline-block">
       <% css_class = { class: "is-active" } if params[:search] == category.name %>
       <%= link_to category.name, proposals_path(search: category.name), css_class || {} %>
     </li>
   <% end %>
 </ul>
+
+<% if @categories.any? { |c| c.name == "Idea Forum" } %>
+  <hr>
+  <ul id="idea-forum" class="no-bullet categories">
+    <% idea_forum = @categories.find { |c| c.name == "Idea Forum" } %>
+    <li class="inline-block">
+      <% css_class = { class: "is-active" } if params[:search] == idea_forum.name %>
+      <%= link_to idea_forum.name, proposals_path(search: idea_forum.name), css_class || {} %>
+    </li>
+  </ul>
+<% end %>
