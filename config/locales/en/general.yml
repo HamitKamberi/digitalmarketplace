@@ -719,7 +719,7 @@ en:
         message: "You are seeing %{limit} of %{count} posts containing the term '%{query}'"
         see_all: "See all"
     tags_cloud:
-      tags: Trending
+      tags: Categories
       districts: "Districts"
       districts_list: "Districts list"
       categories: "Categories"

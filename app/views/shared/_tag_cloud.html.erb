@@ -3,12 +3,16 @@
   <h2 class="sidebar-title"><%= t("shared.tags_cloud.tags") %></h2>
   <br>
   <ul class="no-bullet tag-cloud">
-    <% (local_assigns[:tags] || ActsAsTaggableOn::Tag.unscoped.order(:name)).each do |tag| %>
+    <% (local_assigns[:tags] || ActsAsTaggableOn::Tag.unscoped.order(:name))
+        .reject { |tag| tag.name == "Idea Forum" }
+        .each do |tag| %>
+
       <li class="inline-block">
         <%= link_to public_send("#{taggable.underscore.pluralize}_path", search: tag.name) do %>
           <span class="tag"><%= tag.name %></span>
         <% end %>
       </li>
+
     <% end %>
   </ul>
 </div>
