@@ -15,13 +15,14 @@ devise_scope :user do
   patch :do_finish_signup, to: "users/registrations#do_finish_signup"
 end
 
-devise_for :organizations, class_name: "User",
-                           controllers: {
-                             registrations: "organizations/registrations",
-                             sessions: "devise/sessions"
-                           },
-                           skip: [:omniauth_callbacks]
-
-devise_scope :organization do
-  get "organizations/sign_up/success", to: "organizations/registrations#success"
-end
+# Organization sign-up has been disabled
+# devise_for :organizations, class_name: "User",
+#                            controllers: {
+#                              registrations: "organizations/registrations",
+#                              sessions: "devise/sessions"
+#                            },
+#                            skip: [:omniauth_callbacks]
+#
+# devise_scope :organization do
+#   get "organizations/sign_up/success", to: "organizations/registrations#success"
+# end
