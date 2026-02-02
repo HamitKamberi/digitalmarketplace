@@ -23,6 +23,20 @@
       <%= f.password_field :password_confirmation, autocomplete: "off",
                                                    label: t("devise_views.users.registrations.new.password_confirmation_label") %>
 
+      <%= f.select :country,
+                  {
+                    "Germany" => "Germany",
+                    "North Macedonia" => "North Macedonia",
+                    "France" => "France",
+                    "Sweden" => "Sweden",
+                    "Portugal" => "Portugal",
+                    "Poland" => "Poland",
+                    "Latvia" => "Latvia",
+                    "Spain" => "Spain",
+                    "Switzerland" => "Switzerland"
+                  },
+                  { prompt: "Select a country" } %>
+
       <div class="field role-selection">
         <div class="radio-options">
           <label class="role-option">

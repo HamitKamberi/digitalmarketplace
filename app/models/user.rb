@@ -94,6 +94,7 @@ class User < ApplicationRecord
 
   enum role: { student: "student", stakeholder: "stakeholder", other: "other" }
   validates :role, presence: { message: "Choose your role" }, if: :role_required?
+  validates :country, presence: { message: "Choose your country" }, on: :create, if: :registering_from_web
 
   scope :administrators, -> { joins(:administrator) }
   scope :moderators,     -> { joins(:moderator) }
