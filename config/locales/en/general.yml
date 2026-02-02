@@ -103,6 +103,8 @@ en:
         placeholder: Search internship...
         title: Search
       start_debate: Offer an internship
+      contact_persons: Contact Persons
+      view_contact_persons: View Contact Persons
       title: Internships
       section_header:
         icon_alt: Internships icon

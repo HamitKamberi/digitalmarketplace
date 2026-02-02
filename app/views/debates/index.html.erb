@@ -59,5 +59,18 @@
                 taggable: "Debate",
                 tags: ActsAsTaggableOn::Tag.unscoped.order(:name) %>
     </aside>
+      <% if current_user %>
+        <div class="sidebar-divider"></div>
+        <h2 class="sidebar-title">Contact Persons</h2>
+        <br>
+        <ul class="no-bullet categories">
+          <li class="inline-block">
+            <% css_class = { class: "is-active text-black" } if params[:view] == "contacts" %>
+            <%= link_to "Internship Contact Persons",
+                        internship_contacts_path(view: "contacts"),
+                        css_class || {} %>
+          </li>
+        </ul>
+      <% end %>
   </div>
 </div>

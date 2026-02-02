@@ -12,7 +12,9 @@
 </ul>
 
 <% if @categories.any? { |c| c.name == "Idea Forum" } %>
-  <hr>
+  <div class="sidebar-divider"></div>
+  <h2 class="sidebar-title">Idea Forum</h2>
+  
   <ul id="idea-forum" class="no-bullet categories">
     <% idea_forum = @categories.find { |c| c.name == "Idea Forum" } %>
     <li class="inline-block">

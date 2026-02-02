@@ -113,3 +113,6 @@ en:
           instructions_2: Once confirmed, you may begin participation.
           thank_you: Thank you for registering for the website. You must now <b>confirm your email address</b>.
           title: Confirm your email address
+internship_contacts:
+  title: Internship Contact Persons
+  subtitle: Get in touch with our contact persons in each country for internship inquiries
