@@ -1,331 +1,341 @@
-<h1 class="page-title">Members</h1> <br>
-
-<div class="partners-container">
-  <!-- Filters Sidebar -->
-  <div class="filters-sidebar">
-    <form method="get" action="<%= members_index_path %>" class="filters-form" onsubmit="updateHiddenInputs(event)">
-      <!-- Role Filter -->
-      <div class="filter-section">
-        <h3 class="filter-title">Role</h3>
-        <div class="filter-options">
-          <% @roles.each do |role| %>
-            <div class="filter-option">
-              <input type="checkbox" 
-                     id="role_<%= role %>" 
-                     name="role_checkbox"
-                     value="<%= role %>"
-                     <% if @selected_roles.include?(role) %>checked<% end %>
-                     class="role-checkbox" />
-              <label for="role_<%= role %>">
-                <%= role.capitalize %>
-              </label>
-            </div>
-          <% end %>
+<div class="container">
+  <div class="title-search-wrapper">
+    <h1 class="page-title">Associated Partners</h1>
+    
+    <!-- Search Bar -->
+    <div class="search-form-header">
+      <form method="get" action="<%= associated_partners_path %>" class="search-form">
+        <div class="input-group">
+          <label for="partners_search_text">
+            <span class="show-for-sr">Search Partners</span>
+            <input type="text" 
+                   name="search" 
+                   placeholder="Search by country..." 
+                   class="input-group-field"
+                   value="<%= @search_query %>"
+                   id="partners_search_text">
+          </label>
+          <div class="input-group-button">
+            <button type="submit" class="button" title="Search">
+              <span class="show-for-sr">Search</span>
+              <span class="icon-search"></span>
+            </button>
+          </div>
         </div>
-      </div>
-
-      <!-- Country Filter -->
-      <div class="filter-section">
-        <h3 class="filter-title">Country</h3>
-        <div class="filter-options">
-          <% @countries.each do |country| %>
-            <div class="filter-option">
-              <input type="checkbox" 
-                     id="country_<%= country.downcase.gsub(' ', '_') %>" 
-                     name="country_checkbox"
-                     value="<%= country %>"
-                     <% if @selected_countries.include?(country) %>checked<% end %>
-                     class="country-checkbox" />
-              <label for="country_<%= country.downcase.gsub(' ', '_') %>">
-                <%= country %>
-              </label>
-            </div>
-          <% end %>
-        </div>
-      </div>
-
-      <div class="filter-actions">
-        <button type="submit" class="btn btn-apply">Apply Filters</button>
-        <a href="<%= members_index_path %>" class="btn btn-reset">Reset Filters</a>
-      </div>
-
-      <!-- Hidden input to store selected values -->
-      <input type="hidden" id="selected_roles" name="roles" value="<%= @selected_roles.join(',') %>" />
-      <input type="hidden" id="selected_countries" name="countries" value="<%= @selected_countries.join(',') %>" />
-    </form>
-  </div>
-
-  <!-- Main Content -->
-  <div class="partners-content">
-    <div class="partner-list">
-      <% @users.each do |user| %>
-        <%= link_to user_path(user) do %>
-          <div class="partner-card">
-            <div class="avatar">
-              <% if user.avatar&.attached? %>
-                <%= image_tag(
-                      url_for(user.avatar.variant(resize_to_fill: [60, 60])),
-                      style: "width: 60px; height: 60px; border-radius: 50%; object-fit: cover;",
-                    ) %>
-              <% else %>
-                <%= image_tag("avatar.png", alt: user.name, class: "avatar-img") %>
-              <% end %>
-            </div>
-            <div class="details">
-              <div class="name"><strong><%= user.name.presence || "No Name" %></strong>
-                <% if user.role.present? %>
-                  <small> (<%= user.role %>) </small>
-                <% end %>
-              </div>
-              
-              <div class="username"><%= user.username.presence || "" %></div>
-              <% if user.country.present? %>
-                <div class="country"><%= user.country %></div>
-              <% end %>
-              <% if user_signed_in? %>
-                <div class="email"><%= user.email %></div>
-              <% end %>
-            </div>
+        <% if @search_query.present? %>
+          <div class="clear-search">
+            <a href="<%= associated_partners_path %>" class="link">Clear search</a>
           </div>
         <% end %>
-      <% end %>
+      </form>
     </div>
+  </div>
 
-    <!-- Pagination -->
-    <div class="pagination-wrapper">
-      <%= paginate @users, param_name: :page %>
+  <% if @search_query.present? %>
+    <div class="search-results-info">
+      <p>
+        Search results for: <strong><%= @search_query %></strong>
+        <% total_results = @partners_by_country.values.flatten.length %>
+        (<%= total_results %> <%= "result".pluralize(total_results) %> found)
+      </p>
     </div>
+  <% end %>
+
+  <div class="partners-by-country">
+    <% if @partners_by_country.empty? %>
+      <div class="no-results">
+        <p>No partners found matching your search.</p>
+      </div>
+    <% else %>
+      <% @partners_by_country.each do |country, partners| %>
+        <div class="country-section">
+          <h2 class="country-title"><%= country %></h2>
+          
+          <div class="partners-grid">
+            <% partners.each do |partner| %>
+              <div class="partner-box">
+                <div class="partner-logo">
+                  <%= image_tag partner[:logo_url], alt: partner[:name], class: "logo-image" %>
+                </div>
+                <div class="partner-info">
+                  <h3 class="partner-name"><%= partner[:name] %></h3>
+                  <p class="partner-description"><%= partner[:description] %></p>
+                </div>
+              </div>
+            <% end %>
+          </div>
+        </div>
+      <% end %>
+    <% end %>
   </div>
 </div>
 
-
 <style>
+  .title-search-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2rem;
+    margin-bottom: 1.5rem;
+  }
+
   .page-title {
-    font-size: 2rem;
-    text-align: left;
-    margin: 1rem auto;
-    padding: 0 1rem;
-    word-wrap: break-word;
-    max-width: 1400px;
-  }
-
-  .partners-container {
-    display: flex;
-    gap: 2rem;
-    padding: 0 1rem;
-    max-width: 1400px;
-    margin: 0 auto;
-  }
-
-  /* Sidebar Styles */
-  .filters-sidebar {
-    flex: 0 0 250px;
-    background: #f8f9fa;
-    border-radius: 8px;
-    padding: 1.5rem;
-    height: fit-content;
-    position: sticky;
-    top: 20px;
-  }
-
-  .filters-form {
-    display: flex;
-    flex-direction: column;
-    gap: 2rem;
-  }
-
-  .filter-section {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-  }
-
-  .filter-title {
-    font-size: 1.0rem;
+    font-size: 2.5rem;
     font-weight: 700;
     margin: 0;
     color: #333;
-  }
-
-  .filter-options {
-    display: flex;
-    flex-direction: column;
-    gap: 0.75rem;
-  }
-
-  .filter-option {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-  }
-
-  .filter-option input[type="checkbox"] {
-    cursor: pointer;
-    width: 18px;
-    height: 18px;
-  }
-
-  .filter-option label {
-    cursor: pointer;
-    font-size: 0.95rem;
-    color: #555;
-    margin: 0;
-    flex: 1;
-  }
-
-  .filter-option input[type="checkbox"]:checked + label {
-    font-weight: 500;
-    color: #333;
-  }
-
-  .filter-actions {
-    display: flex;
-    gap: 0.5rem;
-    padding-top: 1rem;
-    border-top: 1px solid #e0e0e0;
-  }
-
-  .btn {
-    padding: 0.5rem 1rem;
-    border: none;
-    border-radius: 4px;
-    font-size: 0.9rem;
-    cursor: pointer;
-    text-decoration: none;
-    display: inline-block;
-    text-align: center;
-    transition: all 0.3s ease;
-  }
-
-  .btn-apply {
-    flex: 1;
-    background-color: #0066cc;
-    color: white;
-  }
-
-  .btn-apply:hover {
-    background-color: #0052a3;
-  }
-
-  .btn-reset {
-    flex: 1;
-    background-color: #e0e0e0;
-    color: #333;
-  }
-
-  .btn-reset:hover {
-    background-color: #d0d0d0;
-  }
-
-  /* Main Content Styles */
-  .partners-content {
-    flex: 1;
-    min-width: 0;
-  }
-
-  .partner-list {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-    width: 100%;
-  }
-
-  .partner-card {
-    display: flex;
-    align-items: center;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    padding: 1rem;
-    background-color: #fff;
-    box-shadow: 0 2px 6px rgba(0,0,0,0.05);
-    width: 100%;
-    transition: all 0.3s ease;
-  }
-
-  .partner-card:hover {
-    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-  }
-
-  .avatar {
     flex-shrink: 0;
   }
 
-  .avatar-img {
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    object-fit: cover;
+  /* Search Form Styles */
+  .search-form-header {
+    flex-shrink: 0;
+    width: 100%;
+    max-width: 600px;
   }
 
-  .details {
-    margin-left: 1rem;
+  .search-form .input-group {
+    margin-bottom: 0.5rem;
+  }
+
+  .input-group-field {
+    font-size: 1rem;
+  }
+
+  .search-form .button {
+    padding: 0.75rem 1.5rem;
+  }
+
+  .clear-search {
+    margin-top: 0.5rem;
+  }
+
+  .clear-search .link {
+    font-size: 0.9rem;
+    color: #000000;
+    text-decoration: none;
+  }
+
+  .clear-search .link:hover {
+    text-decoration: underline;
+  }
+
+  .search-results-info {
+    padding: 1rem 0;
+    margin-bottom: 1rem;
+    color: #666;
+    font-size: 0.95rem;
+  }
+
+  .search-results-info p {
+    margin: 0;
+  }
+
+  .search-results-info strong {
+    color: #000000;
+    font-weight: 600;
+  }
+
+  .no-results {
+    text-align: center;
+    padding: 3rem 1rem;
+    color: #999;
+    font-size: 1.1rem;
+  }
+
+  .country-section {
+    margin-bottom: 3rem;
+  }
+
+  .country-title {
+    font-size: 1.75rem;
+    font-weight: 600;
+    color: #000000;
+    margin: 2rem 0 1.5rem 0;
+    padding-bottom: 0.75rem;
+    border-bottom: 3px solid #000000;
+  }
+
+  .partners-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+  }
+
+  .partner-box {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 1.5rem;
+    background-color: #fff;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    transition: all 0.3s ease;
     display: flex;
     flex-direction: column;
+    gap: 1rem;
+    align-items: center;
+    text-align: center;
   }
 
-  .details .name {
-    font-weight: bold;
-    font-size: 1.5rem;
+  .partner-box:hover {
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
+    transform: translateY(-4px);
+    border-color: #000000;
   }
 
-  .details .username,
-  .details .email,
-  .details .country {
+  .partner-logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 200px;
+    height: 200px;
+    background-color: #f5f5f5;
+    border-radius: 6px;
+    overflow: hidden;
+    flex-shrink: 0;
+  }
+
+  .logo-image {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    padding: 0.75rem;
+  }
+
+  .partner-info {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    flex: 1;
+  }
+
+  .partner-name {
+    display: none;
+  }
+
+  .partner-description {
     font-size: 0.9rem;
     color: #666;
+    margin: 0;
+    line-height: 1.4;
   }
 
-  .details .official-position {
-    font-size: 0.9rem;
-    color: #444;
-    margin-top: 2px;
-  }
-
-  /* Pagination Styles */
-  .pagination-wrapper {
-    display: flex;
-    justify-content: center;
-    margin-top: 2rem;
-    padding-top: 2rem;
-    border-top: 1px solid #e0e0e0;
-  }
-
-  /* Responsive Design */
-  @media (max-width: 768px) {
-    .partners-container {
+  @media (max-width: 1024px) {
+    .title-search-wrapper {
       flex-direction: column;
+      align-items: stretch;
+    }
+
+    .search-form-header {
+      max-width: 100%;
+    }
+
+    .partners-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (max-width: 768px) {
+    .title-search-wrapper {
+      flex-direction: column;
+      align-items: stretch;
+      gap: 1.5rem;
+      margin-bottom: 2rem;
+      padding: 0 1rem;
+    }
+
+    .page-title {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+    }
+
+    .search-form-header {
+      max-width: 100%;
+      width: 100%;
+    }
+
+    .search-form .input-group {
+      margin-bottom: 0.75rem;
+    }
+
+    .clear-search {
+      padding-left: 0.5rem;
+    }
+
+    .country-title {
+      font-size: 1.5rem;
+      margin: 2rem 0 1.5rem 0;
+    }
+
+    .partners-grid {
+      grid-template-columns: 1fr;
       gap: 1.5rem;
     }
 
-    .filters-sidebar {
-      flex: 1 1 100%;
-      position: static;
+    .partner-box {
+      padding: 1.5rem 1rem;
     }
 
-    .partners-content {
-      flex: 1 1 100%;
+    .partner-logo {
+      width: 150px;
+      height: 150px;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .container {
+      padding: 0 1rem;
+    }
+
+    .title-search-wrapper {
+      padding: 0;
+      margin-bottom: 1.5rem;
+    }
+
+    .page-title {
+      font-size: 1.5rem;
+      margin-bottom: 1rem;
+    }
+
+    .search-form .input-group {
+      flex-direction: column;
+    }
+
+    .input-group-field {
+      width: 100%;
+      margin-bottom: 0.5rem;
+    }
+
+    .input-group-button {
+      width: 100%;
+    }
+
+    .input-group-button .button {
+      width: 100%;
+    }
+
+    .country-title {
+      font-size: 1.25rem;
+      margin: 1.5rem 0 1rem 0;
+    }
+
+    .partners-grid {
+      grid-template-columns: 1fr;
+      gap: 1rem;
+    }
+
+    .partner-box {
+      padding: 1rem;
+      gap: 0.75rem;
+    }
+
+    .partner-logo {
+      width: 120px;
+      height: 120px;
+    }
+
+    .partner-description {
+      font-size: 0.85rem;
     }
   }
 </style>
 
-<script>
-  function updateHiddenInputs(event) {
-    const roleCheckboxes = document.querySelectorAll('.role-checkbox');
-    const countryCheckboxes = document.querySelectorAll('.country-checkbox');
-    const selectedRolesInput = document.getElementById('selected_roles');
-    const selectedCountriesInput = document.getElementById('selected_countries');
-
-    const selectedRoles = Array.from(roleCheckboxes)
-      .filter(checkbox => checkbox.checked)
-      .map(checkbox => checkbox.value)
-      .join(',');
-    
-    const selectedCountries = Array.from(countryCheckboxes)
-      .filter(checkbox => checkbox.checked)
-      .map(checkbox => checkbox.value)
-      .join(',');
-
-    selectedRolesInput.value = selectedRoles;
-    selectedCountriesInput.value = selectedCountries;
-  }
-</script>

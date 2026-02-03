@@ -47,6 +47,9 @@ Rails.application.routes.draw do
     resources :follows, only: [:create, :destroy]
     resources :remote_translations, only: [:create]
 
+    # Associated Partners page
+    get "associated_partners", to: "associated_partners#index", as: "associated_partners"
+
     # More info pages
     get "help",             to: "pages#show", id: "help/index",             as: "help"
     get "help/how-to-use",  to: "pages#show", id: "help/how_to_use/index",  as: "how_to_use"
