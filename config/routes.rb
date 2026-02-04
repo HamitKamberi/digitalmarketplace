@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   get 'members/index'
   mount Ckeditor::Engine => "/ckeditor"
   mount LetterOpenerWeb::Engine, at: "/letter_opener" if Rails.env.development?
-  resources :events, only: [:index, :new, :create, :edit, :update, :destroy]
+  #resources :events, only: [:index, :new, :create, :edit, :update, :destroy]
   resources :internship_contacts, only: [:index]
   draw :custom
 

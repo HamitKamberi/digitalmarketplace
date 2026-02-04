@@ -37,104 +37,99 @@ class AssociatedPartnersController < ApplicationController
       "Germany" => [
         {
           name: "Partner 1 Germany",
-          logo_url: "https://via.placeholder.com/150?text=Germany+1",
-          description: "Leading technology partner in Germany specializing in digital solutions."
+          logo_url: "https://www.pngkey.com/png/detail/233-2332677_image-500580-placeholder-transparent.png",
+          description: "Description"
         },
         {
           name: "Partner 2 Germany",
-          logo_url: "https://via.placeholder.com/150?text=Germany+2",
-          description: "Expert consultancy firm providing strategic business solutions."
+          logo_url: "https://www.pngkey.com/png/detail/233-2332677_image-500580-placeholder-transparent.png",
+          description: "Description"
         },
         {
           name: "Partner 2 Germany",
-          logo_url: "https://via.placeholder.com/150?text=Germany+2",
-          description: "Expert consultancy firm providing strategic business solutions."
-        },
-        {
-          name: "Partner 2 Germany",
-          logo_url: "https://via.placeholder.com/150?text=Germany+2",
-          description: "Expert consultancy firm providing strategic business solutions."
+          logo_url: "https://www.pngkey.com/png/detail/233-2332677_image-500580-placeholder-transparent.png",
+          description: "Description"
         }
       ],
       "North Macedonia" => [
         {
           name: "Partner 1 Macedonia",
-          logo_url: "https://vezesharri.com/vsh1.png",
-          description: "Innovative startup focused on digital marketplace development."
+          logo_url: "https://www.pngkey.com/png/detail/233-2332677_image-500580-placeholder-transparent.png",
+          description: "Description"
         }
       ],
       "France" => [
         {
           name: "Partner 1 France",
-          logo_url: "https://via.placeholder.com/150?text=France+1",
-          description: "Premium service provider with expertise in e-commerce platforms."
+          logo_url: "https://www.pngkey.com/png/detail/233-2332677_image-500580-placeholder-transparent.png",
+          description: "Description"
         },
         {
           name: "Partner 2 France",
-          logo_url: "https://via.placeholder.com/150?text=France+2",
-          description: "Creative agency specializing in digital branding and marketing."
+          logo_url: "https://www.pngkey.com/png/detail/233-2332677_image-500580-placeholder-transparent.png",
+          description: "Description"
         },
         {
           name: "Partner 3 France",
-          logo_url: "https://via.placeholder.com/150?text=France+3",
-          description: "Technology consulting firm with extensive international experience."
+          logo_url: "https://www.pngkey.com/png/detail/233-2332677_image-500580-placeholder-transparent.png",
+          description: "Description"
         }
       ],
       "Sweden" => [
         {
           name: "Partner 1 Sweden",
-          logo_url: "https://via.placeholder.com/150?text=Sweden+1",
-          description: "Nordic innovation hub providing cutting-edge tech solutions."
+          logo_url: "https://www.pngkey.com/png/detail/233-2332677_image-500580-placeholder-transparent.png",
+          description: "Description"
         }
       ],
       "Portugal" => [
         {
           name: "Partner 1 Portugal",
-          logo_url: "https://via.placeholder.com/150?text=Portugal+1",
-          description: "Business solutions provider with strong local market presence."
+          logo_url: "https://www.pngkey.com/png/detail/233-2332677_image-500580-placeholder-transparent.png",
+          description: "Description"
         },
         {
           name: "Partner 2 Portugal",
-          logo_url: "https://via.placeholder.com/150?text=Portugal+2",
-          description: "Digital transformation specialist for European enterprises."
+          logo_url: "https://www.pngkey.com/png/detail/233-2332677_image-500580-placeholder-transparent.png",
+          description: "Description"
         }
       ],
       "Poland" => [
         {
           name: "Partner 1 Poland",
-          logo_url: "https://via.placeholder.com/150?text=Poland+1",
-          description: "Software development and integration services provider."
+          logo_url: "https://www.pngkey.com/png/detail/233-2332677_image-500580-placeholder-transparent.png",
+          description: "Description"
         },
         {
           name: "Partner 2 Poland",
-          logo_url: "https://via.placeholder.com/150?text=Poland+2",
-          description: "Full-service digital agency with proven track record."
+          logo_url: "https://www.pngkey.com/png/detail/233-2332677_image-500580-placeholder-transparent.png",
+          description: "Description"
         }
       ],
       "Latvia" => [
         {
           name: "Partner 1 Latvia",
-          logo_url: "https://via.placeholder.com/150?text=Latvia+1",
-          description: "Emerging tech company focusing on marketplace innovations."
+          logo_url: "https://www.pngkey.com/png/detail/233-2332677_image-500580-placeholder-transparent.png",
+          description: "Description."
         }
       ],
       "Spain" => [
         {
           name: "Partner 1 Spain",
-          logo_url: "https://via.placeholder.com/150?text=Spain+1",
-          description: "Enterprise solutions and consulting firm with Mediterranean focus."
+          logo_url: "https://www.pngkey.com/png/detail/233-2332677_image-500580-placeholder-transparent.png",
+          description: "Description"
         },
         {
           name: "Partner 2 Spain",
-          logo_url: "https://via.placeholder.com/150?text=Spain+2",
-          description: "Digital services and infrastructure specialist."
+          logo_url: "https://www.pngkey.com/png/detail/233-2332677_image-500580-placeholder-transparent.png",
+          description: "Description"
         }
       ],
       "Switzerland" => [
         {
           name: "Partner 1 Switzerland",
-          logo_url: "https://via.placeholder.com/150?text=Switzerland+1",
-          description: "Premium international consulting and technology services."
+          logo_url: "https://www.pngkey.com/png/detail/233-2332677_image-500580-placeholder-transparent.png",
+          description: "Description"
         }
       ]
     }
