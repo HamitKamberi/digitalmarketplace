@@ -36,3 +36,73 @@
              recommended_debates: @recommended_debates,
              recommended_proposals: @recommended_proposals %>
 <% end %>
+
+<!-- ================= Partners Slider ================= -->
+<h2 class="title" style="margin-left: 14px; margin-right: 14px;">Associated Partners</h2>
+<% if @partners_by_country.present? %>
+  <div class="partners-slider py-8 bg-gray-50" style="margin-left: 14px; margin-right: 14px;">
+    <div class="swiper mySwiper">
+      <div class="swiper-wrapper">
+        <% @partners_by_country.each do |country, partners| %>
+          <% partners.each do |partner| %>
+            <div class="swiper-slide partner-logo">
+              <img src="<%= partner[:logo_url] %>" 
+                  alt="<%= partner[:name] %>" />
+            </div>
+          <% end %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function initPartnerSwiper() {
+      const el = document.querySelector(".mySwiper");
+      if (!el) return;
+
+      if (el.swiper) {
+        el.swiper.destroy(true, true);
+      }
+
+      new Swiper(el, {
+        slidesPerView: 4,
+        spaceBetween: 30,
+        loop: true,
+        speed: 1000,
+        autoplay: {
+          delay: 1500,
+          disableOnInteraction: false
+        },
+        breakpoints: {
+          640: { slidesPerView: 2 },
+          768: { slidesPerView: 3 },
+          1024: { slidesPerView: 4 }
+        }
+      });
+    }
+
+    document.addEventListener("DOMContentLoaded", initPartnerSwiper);
+    document.addEventListener("turbo:load", initPartnerSwiper);
+    document.addEventListener("turbolinks:load", initPartnerSwiper);
+  </script>
+
+  <style>
+    .partner-logo {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 240px;      /* fixed width for all logos */
+      height: 100px;      /* fixed height for all logos */
+      padding: 0rem; /* very low padding (2px) */
+      box-sizing: border-box;
+    }
+
+    .partner-logo img {
+      max-width: 100%;
+      max-height: 100%;
+      object-fit: contain;
+      display: block;
+    }
+  </style>  
+<% end %>
+

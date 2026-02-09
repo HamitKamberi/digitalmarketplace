@@ -14,6 +14,8 @@ class WelcomeController < ApplicationController
     @remote_translations = detect_remote_translations(@feeds,
                                                       @recommended_debates,
                                                       @recommended_proposals)
+    all_partners_data = AssociatedPartnersController.new.send(:initialize_partners_data)
+    @partners_by_country = all_partners_data
   end
 
   def welcome

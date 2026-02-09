@@ -12,6 +12,9 @@
 
     <%= raw setting["html.per_page_code_head"] %>
     <%= render Layout::CookiesConsent::Vendors::ScriptsComponent.new %>
+    <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css"/>
   </head>
   <body class="<%= yield(:body_class) %> public">
     <%= render Layout::SkipToMainContentComponent.new %>
@@ -31,5 +34,6 @@
     </div>
     <%= render Layout::CookiesConsent::BannerComponent.new %>
     <%= render Layout::CookiesConsent::ManagementComponent.new %>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
   </body>
 </html>
