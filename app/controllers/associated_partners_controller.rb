@@ -170,9 +170,54 @@ class AssociatedPartnersController < ApplicationController
       ],
       "Sweden 🇸🇪" => [
         {
-          name: "Partner 1 Sweden",
-          logo_url: "https://www.pngkey.com/png/detail/233-2332677_image-500580-placeholder-transparent.png",
-          description: "Description"
+          name: "BizMaker",
+          logo_url: "https://image.pitchbook.com/e0DtBWO7QSIDCTfLdqYGkXQuzxd1492602141489_200x200",
+          description: "/"
+        },
+        {
+          name: "Sundsvall kommun",
+          logo_url: "https://sundsvall.se/images/18.40ed9db19950c494c269341/1758181255212/SVALL_PLV_LOGO_POS_GROEN_RGB.svg",
+          description: "Municipality"
+        },
+        {
+          name: "Östersund kommun",
+          logo_url: "https://www.ostersund.se/images/18.212597031610053f2ba346e5/1597991388864/ostersunds-kommun-staare.png",
+          description: "Municipality"
+        },
+        {
+          name: "Region Jämtland / Härjedalen",
+          logo_url: "https://www.regionjh.se/images/18.1c1b10051934aba435c17efb/1730981917140/01_RJH-logotyp_liggande_svart%20ordbild_rgb.svg",
+          description: "Region"
+        },
+        {
+          name: "Region Västernorrland",
+          logo_url: "https://www.rvn.se/static/img/rvn_logotyp.svg",
+          description: "Region"
+        },
+        {
+          name: "Handelskammaren Mittsverige",
+          logo_url: "https://midchamber.se/content/uploads/2019/02/midchamber-logo.png",
+          description: "/"
+        },
+        {
+          name: "Samling Näringsliv",
+          logo_url: "https://www.samlingnaringsliv.se/core/images/363/logo_big_orange.png",
+          description: "/"
+        },
+        {
+          name: "IUC Z-Group AB",
+          logo_url: "https://iucjamtlandharjedalen.se/wordpress/wp-content/uploads/2020/08/IUC_petrol_stor.png",
+          description: "/"
+        },
+        {
+          name: "Jämtland/Härjedalen Turism",
+          logo_url: "https://jht.se/wp-content/uploads/2018/06/jht_red-300x300.png",
+          description: "Tourist association"
+        },
+        {
+          name: "Bron Innovation",
+          logo_url: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTCaqvLgHsq6yr7MESpNCg4iBK-e0mS29dadg&s",
+          description: "/"
         }
       ],
       "Portugal 🇵🇹" => [
