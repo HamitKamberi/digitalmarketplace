@@ -110,7 +110,7 @@ Rails.application.configure do
     address: 'in-v3.mailjet.com',
     port: 587,
     user_name: '723c14f72a847e1cf6af3ec57902f1a5',
-    password: 'beb48069e760a0b993355d4c5af9446b',
+    password: '30764980d8833e82e2463af1e417fd52',
     authentication: 'plain',
     enable_starttls_auto: true
   }
