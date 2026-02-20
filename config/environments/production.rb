@@ -112,7 +112,7 @@ Rails.application.configure do
     password: '80f70efd3bcd40',
     address: 'sandbox.smtp.mailtrap.io',
     host: 'sandbox.smtp.mailtrap.io',
-    port: '2525',
+    port: '587',
     authentication: :login
   }
 
