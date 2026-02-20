@@ -108,15 +108,15 @@ Rails.application.configure do
   # Looking to send emails in production? Check out our Email API/SMTP product!
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.smtp_settings = {
-    user_name: 'f67082af2ad3ac',
-    password: '80f70efd3bcd40',
-    address: 'sandbox.smtp.mailtrap.io',
-    host: 'sandbox.smtp.mailtrap.io',
-    port: '587',
-    authentication: :login
+    address: "smtp.resend.com",
+    port: 587,
+    user_name: "resend",
+    password: "re_GWHc9Cq1_Lr13emDun3UpNZ4QjfzvLo3p",
+    authentication: :plain,
+    enable_starttls_auto: true
   }
 
-  #b2fa6d52773d6788e01ebc69c4425ae5
+  # re_GWHc9Cq1_Lr13emDun3UpNZ4QjfzvLo3p
   # Enable DNS rebinding protection and other `Host` header attacks.
   # config.hosts = [
   #   "example.com",     # Allow requests from example.com
