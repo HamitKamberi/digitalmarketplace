@@ -105,17 +105,18 @@ Rails.application.configure do
   config.active_record.dump_schema_after_migration = false
   config.action_mailer.default_url_options = { host: "impactlab.challenge-eu.eu", protocol: "https" }
 
+  # Looking to send emails in production? Check out our Email API/SMTP product!
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.smtp_settings = {
-    address: 'in-v3.mailjet.com',
-    port: 587,
-    user_name: '723c14f72a847e1cf6af3ec57902f1a5',
-    password: '5c52b8d3029f4692331683280a7b5b8d',
-    authentication: 'plain',
-    enable_starttls_auto: true
+    user_name: 'f67082af2ad3ac',
+    password: '80f70efd3bcd40',
+    address: 'sandbox.smtp.mailtrap.io',
+    host: 'sandbox.smtp.mailtrap.io',
+    port: '2525',
+    authentication: :login
   }
 
-
+  #b2fa6d52773d6788e01ebc69c4425ae5
   # Enable DNS rebinding protection and other `Host` header attacks.
   # config.hosts = [
   #   "example.com",     # Allow requests from example.com
