@@ -153,66 +153,106 @@ class AssociatedPartnersController < ApplicationController
       ],
       "France 🇫🇷" => [
         {
-          name: "Partner 1 France",
-          logo_url: "https://www.pngkey.com/png/detail/233-2332677_image-500580-placeholder-transparent.png",
-          description: "Description"
+          name: "SYMBIO Industry",
+          logo_url: "https://www.symbio.one/themes/custom/symbio/logo%403x.png",
+          description: "They focus on developing and commercialising hydrogen fuel cell systems for vehicles, contributing to the transition towards cleaner transportation solutions. They also develop engineering curricula in the field of Hydrogen."
         },
         {
-          name: "Partner 2 France",
-          logo_url: "https://www.pngkey.com/png/detail/233-2332677_image-500580-placeholder-transparent.png",
-          description: "Description"
+          name: "Naldeo",
+          logo_url: "https://www.naldeo.com/assets/img/Naldeo_logo_le_groupe-white.svg",
+          description: "Independent engineering and consulting group in France, focusing on ecological transition and climate change's impact on resource management, including water and energy."
         },
         {
-          name: "Partner 3 France",
-          logo_url: "https://www.pngkey.com/png/detail/233-2332677_image-500580-placeholder-transparent.png",
-          description: "Description"
+          name: "MADE IN",
+          logo_url: "https://www.made-in-sml.fr/wp-content/themes/made-in-2020/img/logo_madein_couleur.png",
+          description: "Higher education institution offering programmes in management, design, and architecture."
+        },
+        {
+          name: "ISARA",
+          logo_url: "https://isara.fr/wp-content/uploads/2025/08/logo-isara.webp",
+          description: "The school offers a broad array of Bachelor and Master level curricula in fields such as agriculture, food science, agribusiness, and environmental science, and is also actively involved in research activities and innovation, entrepreneurship, agroecology, and sustainable food systems."
+        },
+        {
+          name: "Saint Thomas d'Aquin",
+          logo_url: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTFTh7Br6_h_v_mlxO1DklUfBWeGvsSrWqNlA&s",
+          description: "Educational institution encompassing primary to higher education, including a college and a general and technological high school"
+        },
+        {
+          name: "France Travail",
+          logo_url: "https://cdn.francetravail.fr/studio/logos/marque/Logo_France_Travail_RVB_Horizontal_Coul_Positif.svg",
+          description: "Public service agency responsible for employment and job training. It serves as a key resource for job seekers in France, providing a range of services including job listings, career advice, and unemployment benefits administration."
+        },
+        {
+          name: "REGION AURA",
+          logo_url: "https://www.auvergnerhonealpes.fr/themes/custom/aura_region_theme/logo.svg",
+          description: "Administrative institution focusing on economic development, innovation in various sectors including technology and healthcare, and environmental sustainability."
+        },
+        {
+          name: "METROPOLE LYON",
+          logo_url: "https://www.grandlyon.com/_assets/a181c6b9e3ca3150a672e87580994929/Images/logo-metropole-lyon.svg",
+          description: "Administrative area encompassing the city of Lyon and 58 other municipalities, focusing on sustainable urban development, economic innovation, and quality of life, while also actively participating in various European projects related to innovation, environmental initiatives, and urban development."
+        },
+        {
+          name: "Robotique First",
+          logo_url: "https://robotiquefirstquebec.org/wp/wp-content/uploads/2023/11/RFQ_Horizontal.png",
+          description: "Association that promotes robotics education through interactive competitions and events, aiming to inspire young people to be science and technology leaders. It emphasises hands-on learning and mentorship in STEM fields, fostering skills and confidence in students to innovate and excel in a technologically advancing society."
+        },
+        {
+          name: "Ecole de Production",
+          logo_url: "https://www.ecoles-de-production.com/wp-content/themes/twentytwentyone-child/assets/images/logo-footer.png",
+          description: "A network of non-profit technical teaching institutions recognized by the state. They offer young people aged 15 to 18 years vocational training through a \"learning by doing\" approach, allowing them to acquire skills by working on real customer orders across various sectors like industry, hospitality, and carpentry."
+        },
+        {
+          name: "Haas Automation group",
+          logo_url: "https://www.haascnc.com/content/dam/haascnc/assets/haaslogos/HaasF1TeamLogoLockup_ColorWhiteText1.png",
+          description: "They specialize in designing and manufacturing a wide range of CNC machine tools, including milling machines and lathes, known for their precision, reliability, and innovative features. It runs the Gene Haas Foundation which focuses on supporting manufacturing education."
         }
       ],
       "Sweden 🇸🇪" => [
         {
           name: "BizMaker",
           logo_url: "https://image.pitchbook.com/e0DtBWO7QSIDCTfLdqYGkXQuzxd1492602141489_200x200",
-          description: ""
+          description: "BizMaker works to shape the future of Västernorrland. With a focus on entrepreneurship, innovation and attraction, we work to shape new ideas into sustainable solutions, enable new establishments and help today's companies to transform."
         },
         {
           name: "Sundsvall kommun",
           logo_url: "https://sundsvall.se/images/18.40ed9db19950c494c269341/1758181255212/SVALL_PLV_LOGO_POS_GROEN_RGB.svg",
-          description: "Municipality"
+          description: "The municipality of Sundsvall"
         },
         {
           name: "Östersund kommun",
           logo_url: "https://www.ostersund.se/images/18.212597031610053f2ba346e5/1597991388864/ostersunds-kommun-staare.png",
-          description: "Municipality"
+          description: "The municipality of Östersund"
         },
         {
           name: "Region Jämtland / Härjedalen",
           logo_url: "https://www.regionjh.se/images/18.1c1b10051934aba435c17efb/1730981917140/01_RJH-logotyp_liggande_svart%20ordbild_rgb.svg",
-          description: "Region"
+          description: "The region of Jämtland / Härjedalen"
         },
         {
           name: "Region Västernorrland",
           logo_url: "https://www.rvn.se/static/img/rvn_logotyp.svg",
-          description: "Region"
+          description: "The region of Västernorrland"
         },
         {
           name: "Handelskammaren Mittsverige",
           logo_url: "https://midchamber.se/content/uploads/2019/02/midchamber-logo.png",
-          description: ""
+          description: "The Central Sweden Chamber of Commerce is a politically independent business organization with member companies in Västernorrland and Jämtland counties. We conduct active advocacy work on behalf of our members within infrastructure, international trade and skills provision."
         },
         {
           name: "Samling Näringsliv",
           logo_url: "https://www.samlingnaringsliv.se/core/images/363/logo_big_orange.png",
-          description: ""
+          description: "We are a cluster of companies and entrepreneurs in Jämtland-Härjedalen who work to create an even better business climate. We want to be an obvious region for business establishment and business development."
         },
         {
           name: "IUC Z-Group AB",
           logo_url: "https://iucjamtlandharjedalen.se/wordpress/wp-content/uploads/2020/08/IUC_petrol_stor.png",
-          description: ""
+          description: "IUC Jämtland/Härjedalen is a regional resource and meeting place that works to strengthen, develop and increase the competitiveness of manufacturing companies and industry in Jämtland County."
         },
         {
           name: "Jämtland/Härjedalen Turism",
           logo_url: "https://jht.se/wp-content/uploads/2018/06/jht_red-300x300.png",
-          description: "Tourist association"
+          description: "The tourist association of Jämtland and Härjedalen"
         },
         {
           name: "Bron Innovation",
