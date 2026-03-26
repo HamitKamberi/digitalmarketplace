@@ -11,6 +11,6 @@ class Debates::FormComponent < ApplicationComponent
   private
 
     def categories
-      Tag.category.order(:name)
+      Tag.category.where.not(name: "Idea Forum").order(:name)
     end
 end
