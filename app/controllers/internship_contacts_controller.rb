@@ -7,64 +7,56 @@ class InternshipContactsController < ApplicationController
       "Germany" => {
         flag: "🇩🇪",
         contacts: [
-          { name: "Hans Mueller", email: "hans.mueller@example.com", phone: "+49 30 1234567" },
-          { name: "Anna Schmidt", email: "anna.schmidt@example.com", phone: "+49 30 1234568" }
+          { name: "HSO", email: "incomings@hs-offenburg.de" },        
         ]
       },
       "North Macedonia" => {
         flag: "🇲🇰",
         contacts: [
-          { name: "Hamit Kamberi", email: "hamit.kamberi@example.com", phone: "+389 2 3456789" },
-          { name: "Dardan Hoxha", email: "dardan.hoxha@example.com", phone: "+389 2 3456790" }
+          { name: "SEEU", email: "s.alija@seeu.edu.mk" }
         ]
       },
       "France" => {
         flag: "🇫🇷",
         contacts: [
-          { name: "Pierre Dupont", email: "pierre.dupont@example.com", phone: "+33 1 42 34 56 78" },
-          { name: "Marie Laurent", email: "marie.laurent@example.com", phone: "+33 1 42 34 56 79" }
+          { name: "ECAM", email: "exchange@ecam.fr" }
         ]
       },
       "Sweden" => {
         flag: "🇸🇪",
         contacts: [
-          { name: "Erik Andersson", email: "erik.andersson@example.com", phone: "+46 8 123 45 67" },
-          { name: "Sofia Bergman", email: "sofia.bergman@example.com", phone: "+46 8 123 45 68" }
+          { name: "MIUN", email: "chalengeeeu@miun.se" },
         ]
       },
       "Portugal" => {
         flag: "🇵🇹",
         contacts: [
-          { name: "João Silva", email: "joao.silva@example.com", phone: "+351 21 123 4567" },
-          { name: "Carla Oliveira", email: "carla.oliveira@example.com", phone: "+351 21 123 4568" }
+          { name: "UEL", email: "pending ..." },
         ]
       },
       "Poland" => {
         flag: "🇵🇱",
         contacts: [
-          { name: "Krzysztof Nowak", email: "krzysztof.nowak@example.com", phone: "+48 22 123 4567" },
-          { name: "Magdalena Kowalski", email: "magdalena.kowalski@example.com", phone: "+48 22 123 4568" }
+          { name: "UWM", email: "a.jablonska@uwm.edu.pl" },
         ]
       },
       "Latvia" => {
         flag: "🇱🇻",
         contacts: [
-          { name: "Janis Ozols", email: "janis.ozols@example.com", phone: "+371 67 234 567" },
-          { name: "Ingrid Berzina", email: "ingrid.berzina@example.com", phone: "+371 67 234 568" }
+          { name: "LBTU", email: "erasmus@lbtu.lv"}
         ]
       },
       "Spain" => {
         flag: "🇪🇸",
         contacts: [
-          { name: "Carlos García", email: "carlos.garcia@example.com", phone: "+34 91 123 4567" },
-          { name: "Isabel Rodriguez", email: "isabel.rodriguez@example.com", phone: "+34 91 123 4568" }
+          { name: "UEV", email: "laura.bertolin@universidadeuropea.es" },
+          { email: "isabel.rodriguez@example.com" }
         ]
       },
       "Switzerland" => {
         flag: "🇨🇭",
         contacts: [
-          { name: "Peter Müller", email: "peter.muller@example.com", phone: "+41 44 123 4567" },
-          { name: "Sophie Schmid", email: "sophie.schmid@example.com", phone: "+41 44 123 4568" }
+          { name: "FHNW", email: "mirjam.schmitz@fhnw.ch "},
         ]
       }
     }
