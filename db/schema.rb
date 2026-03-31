@@ -1651,6 +1651,7 @@ ActiveRecord::Schema[7.1].define(version: 2026_02_02_101000) do
     t.string "type_of_internship"
     t.text "language_competences"
     t.string "country"
+    t.string "internship_category"
     t.index ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true
     t.index ["date_of_birth"], name: "index_users_on_date_of_birth"
     t.index ["email"], name: "index_users_on_email", unique: true

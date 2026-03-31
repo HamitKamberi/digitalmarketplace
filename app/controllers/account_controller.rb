@@ -63,30 +63,32 @@ class AccountController < ApplicationController
         :on_site_or_remote,
         :planned_working_hours_per_week,
         :type_of_internship,
-        :language_competences
+        :language_competences,
+        :internship_category
       )
     end
 
     def allowed_params
       if @account.organization?
         [:avatar, :phone_number, :email_on_comment, :email_on_comment_reply, :newsletter,
-        :description, organization_attributes: [:name, :responsible_name]]
+         :description, organization_attributes: [:name, :responsible_name]]
       else
         [:avatar, :username, :public_activity, :public_interests, :email_on_comment,
-        :email_on_comment_reply, :email_on_direct_message, :email_digest, :newsletter,
-        :official_position_badge, :recommended_debates, :recommended_proposals,
-        :description,
-        # include internship fields in permitted params for students
-        :motivation_statement,
-        :current_degree_program,
-        :expected_graduation_year,
-        :key_courses_and_projects,
-        :academic_achievements,
-        :preferred_duration,
-        :on_site_or_remote,
-        :planned_working_hours_per_week,
-        :type_of_internship,
-        :language_competences]
+         :email_on_comment_reply, :email_on_direct_message, :email_digest, :newsletter,
+         :official_position_badge, :recommended_debates, :recommended_proposals,
+         :description,
+         # include internship fields in students
+         :motivation_statement,
+         :current_degree_program,
+         :expected_graduation_year,
+         :key_courses_and_projects,
+         :academic_achievements,
+         :preferred_duration,
+         :on_site_or_remote,
+         :planned_working_hours_per_week,
+         :type_of_internship,
+         :language_competences,
+         :internship_category]
       end
     end
 end
