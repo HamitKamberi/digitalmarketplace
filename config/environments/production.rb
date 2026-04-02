@@ -108,10 +108,10 @@ Rails.application.configure do
   # Looking to send emails in production? Check out our Email API/SMTP product!
   config.action_mailer.delivery_method = :smtp
    config.action_mailer.smtp_settings = {
-    address: 'in-v3.mailjet.com',
+    address: 'smtp.zenbox.pl',
     port: 587,
-    user_name: '723c14f72a847e1cf6af3ec57902f1a5',
-    password: '66bae2482714ddbebfcd8d0721a45f72',
+    user_name: 'impactlab@challengeeu.eu',
+    password: 'V$Y^yVs^e3Tc',
     authentication: 'plain',
     enable_starttls_auto: true
   }
