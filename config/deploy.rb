@@ -25,7 +25,6 @@ set :ssh_options, port: deploysecret(:ssh_port)
 set :repo_url, "https://github.com/HamitKamberi/digitalmarketplace.git"
 set :branch, "stable"
 
-set :revision, `git rev-parse --short #{fetch(:branch)}`.strip
 
 set :log_level, :info
 set :pty, true
