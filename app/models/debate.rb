@@ -6,6 +6,7 @@ class Debate < ApplicationRecord
   include Sanitizable
   include Searchable
   include Filterable
+  include Documentable
   include HasPublicAuthor
   include Graphqlable
   include Relationable

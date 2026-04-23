@@ -10,16 +10,31 @@
                                          data: suggest_data(debate) %>
       </div>
       <div class="js-suggest" data-locale="<%= translations_form.locale %>"></div>
-      <div>
-        <%= translations_form.text_area :description,
-                                        maxlength: Debate.description_max_length,
-                                        class: "html-area" %>
-      </div>
+      <%= translations_form.hidden_field :description,
+                                         value: (translations_form.object.description.presence || "See attached document for internship details.") %>
     <% end %>
   </fieldset>
   <%= f.invisible_captcha :subtitle %>
   <fieldset>
-    <legend><%= t("shared.optional") %></legend>
+    <fieldset class="documents-list documents-nested debate-documents-list">
+      <legend>Upload internship document</legend>
+
+      <div id="nested-debate-documents" data-max-documents-allowed="<%= Debate.max_documents_allowed %>">
+        <%= f.fields_for :documents do |documents_builder| %>
+          <%= render "debates/document_fields", f: documents_builder %>
+        <% end %>
+      </div>
+
+      <%= link_to_add_association t("documents.form.add_new_document"), f, :documents,
+                                  partial: "debates/document_fields",
+                                  id: "new_debate_document_link",
+                                  class: "button upload-document" %>
+    </fieldset>
+
+    <div>
+      <% countries = @countries || ["Germany", "North Macedonia", "France", "Sweden", "Portugal", "Poland", "Latvia", "Spain", "Switzerland"] %>
+      <%= f.select :country, countries, { include_blank: "Select a country" } %>
+    </div>
     <div>
       <p class="help-text" id="tag-list-help-text"><%= t("debates.form.tags_instructions") %></p>
       <div id="category_tags" class="tags">
@@ -45,3 +60,59 @@
     <%= f.submit(class: "button", value: t("debates.#{action_name}.form.submit_button")) %>
   </div>
 <% end %>
+
+<style>
+  .debate-documents-list > legend {
+    margin-bottom: 0.75rem;
+  }
+
+  .debate-document-fields {
+    margin-bottom: 0.75rem;
+  }
+
+  .debate-document-upload-field {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .debate-document-upload-field input[type="file"] {
+    width: 100%;
+  }
+
+  .debate-document-upload-field input[type="file"]::file-selector-button {
+    background: #2d0b0a;
+    color: #fff;
+    border: 0;
+    border-radius: 4px;
+    padding: 0.5rem 0.9rem;
+    margin-right: 0.6rem;
+    cursor: pointer;
+    font-weight: 600;
+    transition: background-color 0.2s ease;
+  }
+
+  .debate-document-upload-field input[type="file"]::file-selector-button:hover {
+    background: #2D0B0A;
+  }
+
+  .debate-document-remove-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 1.8rem;
+    height: 1.8rem;
+    border-radius: 999px;
+    background: #f4d7d7;
+    color: #8a1f1f;
+    font-size: 1.15rem;
+    line-height: 1;
+    text-decoration: none;
+    font-weight: 700;
+  }
+
+  .debate-document-remove-btn:hover {
+    background: #e8bcbc;
+    color: #6f1717;
+  }
+</style>

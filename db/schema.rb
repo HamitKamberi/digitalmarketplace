@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2026_02_02_101000) do
+ActiveRecord::Schema[7.1].define(version: 2026_04_23_120000) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "pg_trgm"
   enable_extension "plpgsql"
@@ -533,6 +533,7 @@ ActiveRecord::Schema[7.1].define(version: 2026_02_02_101000) do
     t.integer "geozone_id"
     t.tsvector "tsv"
     t.datetime "featured_at", precision: nil
+    t.string "country"
     t.index ["author_id", "hidden_at"], name: "index_debates_on_author_id_and_hidden_at"
     t.index ["author_id"], name: "index_debates_on_author_id"
     t.index ["cached_votes_down"], name: "index_debates_on_cached_votes_down"

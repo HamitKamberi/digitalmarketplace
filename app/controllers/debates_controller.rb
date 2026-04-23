@@ -1,11 +1,13 @@
 class DebatesController < ApplicationController
   include FeatureFlags
   include CommentableActions
+  include DocumentAttributes
   include FlagActions
   include Translatable
 
   before_action :authenticate_user!, except: [:index, :show]
   before_action :set_view, only: :index
+  before_action :set_countries, only: [:index, :new, :create]
   before_action :debates_recommendations, only: :index, if: :current_user
 
   feature_flag :debates
@@ -19,6 +21,11 @@ class DebatesController < ApplicationController
   helper_method :resource_model, :resource_name
   respond_to :html, :js
 
+  def new
+    super
+    @debate.documents.build(user: current_user) if @debate.documents.empty?
+  end
+
   def create
     @debate = Debate.new(debate_params)
     @debate.author = current_user
@@ -28,10 +35,6 @@ class DebatesController < ApplicationController
     else
       render :new
     end
-  end
-
-  def index_customization
-    @featured_debates = @debates.featured
   end
 
   def show
@@ -64,7 +67,9 @@ class DebatesController < ApplicationController
     end
 
     def allowed_params
-      [:tag_list, :terms_of_service, :related_sdg_list, translation_params(Debate)]
+      [:tag_list, :terms_of_service, :related_sdg_list, :country,
+       { documents_attributes: document_attributes },
+       translation_params(Debate)]
     end
 
     def resource_model
@@ -79,5 +84,14 @@ class DebatesController < ApplicationController
       if Setting["feature.user.recommendations_on_debates"] && current_user.recommended_debates
         @recommended_debates = Debate.recommendations(current_user).sort_by_random.limit(3)
       end
+    end
+
+    def set_countries
+      @countries = ["Germany", "North Macedonia", "France", "Sweden", "Portugal", "Poland", "Latvia", "Spain", "Switzerland"]
+    end
+
+    def index_customization
+      @resources = @resources.where(country: params[:country]) if params[:country].present?
+      @featured_debates = @resources.featured
     end
 end

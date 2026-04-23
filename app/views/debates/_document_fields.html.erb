@@ -1,0 +1,10 @@
+<div class="debate-document-fields nested-fields">
+  <%= f.hidden_field :id %>
+  <%= f.hidden_field :user_id, value: current_user.id %>
+  <%= f.hidden_field :cached_attachment %>
+
+  <div class="debate-document-upload-field">
+    <%= f.file_field :attachment, label: false, accept: ".pdf" %>
+    <%= link_to_remove_association "×", f, class: "debate-document-remove-btn", title: "Remove document" %>
+  </div>
+</div>

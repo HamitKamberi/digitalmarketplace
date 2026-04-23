@@ -9,6 +9,7 @@ class Document < ApplicationRecord
   validates :documentable_id, presence: true,         if: -> { persisted? }
   validates :documentable_type, presence: true,       if: -> { persisted? }
 
+  before_validation :set_title_from_attachment, if: -> { title.blank? && attachment.attached? }
   before_save :remove_metadata
 
   scope :admin, -> { where(admin: true) }
@@ -30,6 +31,10 @@ class Document < ApplicationRecord
   end
 
   private
+
+    def set_title_from_attachment
+      self.title = attachment.filename.base
+    end
 
     def association_name
       :documentable
